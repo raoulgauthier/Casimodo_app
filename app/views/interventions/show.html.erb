@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <h4><%= @workorder.date_planned.strftime('%I:%M')%></h1>
+      </div>
+    </div>
+  </div>
+
+  <% content_for :description do %>
+  <p>Edit this template in <code>app/views/Workorders/show.html.erb</code>.</p>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-horizontal">
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Address</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.address %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Description</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.description %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Date planned</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.date_planned %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Date done</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.date_done %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Report</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.report %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Status</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.status %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-md-2 form-label">Manager</label>
+                <div class="col-12 col-md-10 form-control uneditable-input">
+                  <span>
+                    <%= @workorder.manager.email %>
+                  </span>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <div class="row">
+
+                  <% if @workorder.status == "Scheduled" %>
+                  <div class="col">
+                    <%= form_tag(start_intervention_path(@workorder)) do %>
+                    <%= submit_tag "Start", class: "btn btn-primary"%>
+                    <% end %>
+                    </div>
+
+                  <% else %>
+                  <%= form_tag(stop_intervention_path(@workorder)) do %>
+                    <%= submit_tag "Stop", class: "btn btn-primary"%>
+                    <% end %>
+                  <% end %>
+
+                 <!--  <% if @workorder.status == "In progress" %>
+                  <div class="col">
+                    <%= link_to 'Cancel', interventions_path, class: 'btn' %>
+                  </div>
+                  <% end %> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

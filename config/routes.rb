@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
 
-  get 'interventions/index'
+  resources :interventions, only: [:show, :index] do
+    member do
+      post 'start'
+      post 'stop'
+    end
+  end
 
   resources :workorders
 
