@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise'
+gem 'devise','~> 4.2'
+gem 'devise_invitable', '~> 1.7.0'
 
 source "https://gems.rapidrailsthemes.com/gems" do
   gem "rrt", "~> 1.0.18"
