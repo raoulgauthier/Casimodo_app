@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<%= html_tag :lang => "en" do %>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
+      you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+
+    <title><%= [@title, app_name].compact.join(" - ") %></title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'%>
+    <%= yield :styles %>
+
+    <%= favicon_link_tag %>
+    <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
+
+    <%= render 'layouts/external_js_libs' %>
+    <%= yield :external_js_libs %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :javascript %>
+    <%= yield :head %>
+  </head>
+
+  <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
+
+<div class="card">
+  <div class="card-body" id="padding_zero">
+    <header class="landing-header-1" style="background-image: url(https://images.unsplash.com/photo-1500021804447-2ca2eaaaabeb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=510608b1165db1e48889a8a059dd5d1e&auto=format&fit=crop&w=1500&q=80)">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
+              <a href="javascript:" class="navbar-brand d-lg-none">
+                <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
+                alt="Pyrrmid 64">YUMAN</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#standardLandingNavbarWithCenteredBrand" aria-controls="standardLandingNavbarWithCenteredBrand"
+              aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-white" id="standardLandingNavbarWithCenteredBrand">
+                <ul class="nav navbar-nav navbar-left">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="javascript:">HOME</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="javascript:">ABOUT</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="javascript:">TEAM</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="javascript:">CONTACT</a>
+                  </li>
+                </ul>
+                <a href="javascript:" class="navbar-brand navbar-center text-center d-none d-sm-none d-md-none d-lg-block">
+                  <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
+                  alt="Pyrrmid 64">YUMAN</a>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item">
+
+                  <a href="/users/sign_in"class="btn btn-sm btn-outline-light text-white text-hover-dark" href="javascript:">SIGN IN</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/users/sign_up" class="btn btn-sm btn-primary" href="javascript:">SIGN UP</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="container header-caption">
+        <div class="row">
+          <div class="col-12 col-md-7 px-5">
+            <div class="text-white">
+              <h1 class="mt-5 font-weight-bold leading-tight">WELCOME TO THE NEW THING</h1>
+              <p class="lead">Lorem ea sit vel laudantium numquam vel officiis impedit aliquam! Perspiciatis
+                maiores veniam perspiciatis rem debitis.</p>
+            </div>
+            <a href="/users/sign_up" class="btn btn-primary text-white">SIGN UP</a>
+            <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class=" ">
+  <div class="container">
+    <h2 class="text-center header-separator mt-4">Our Amazing Partners</h2>
+    <p class="text-center lead text-uppercase mb-5">Ipsum aliquam optio est maxime quam. Neque tempore voluptas a veritatis.</p>
+    <div
+    class="row">
+      <div class="col-12 col-md-4">
+        <div class="media mb-4 border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-eye h2"></i>
+            <h5 class="mt-0">Feature 1</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="media mb-4 border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-hand-stop h2"></i>
+            <h5 class="mt-0">Feature 2</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="media mb-4 border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-info h2"></i>
+            <h5 class="mt-0">Feature 1</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="media mb-4 border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-ticket h2"></i>
+            <h5 class="mt-0">Feature 1</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="media border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-panel h2"></i>
+            <h5 class="mt-0">Feature 1</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="media mb-4 border border-2x p-3 text-center">
+          <div class="media-body">
+            <i class="ti-bolt h2"></i>
+            <h5 class="mt-0">Feature 1</h5>
+            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+              viverra turpis.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<%= render 'footer' %>
+  </body>
+<% end %>

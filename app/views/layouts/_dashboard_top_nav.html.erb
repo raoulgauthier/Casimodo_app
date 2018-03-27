@@ -11,10 +11,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Servers</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="/workorders">Workorders</a>
       </li>
     </ul>
     <%= yield :navbar %>
@@ -120,9 +120,12 @@
                   </a>
                 </div>
                 <div>
-                  <a href="#" class="btn ">
+                  <%= link_to destroy_user_session_path, class:"btn", method: :delete do %>
+              <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+                 <!--  <a href="/users/sign_out" class="btn ">
                     Log Out
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
