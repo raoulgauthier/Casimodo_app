@@ -7,8 +7,8 @@ class CreateWorkorders < ActiveRecord::Migration[5.1]
       t.datetime :date_done
       t.text :report
       t.string :status
-      t.references :manager, foreign_key: true
-      t.references :technician, foreign_key: true
+      t.references :manager, foreign_key: { to_table: :users }
+      t.references :technician, foreign_key: { to_table: :users }
 
       t.timestamps
     end
