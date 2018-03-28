@@ -19,12 +19,12 @@ users = User.create([
 { email: 'Jesse.Pinkman@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Skyler.White@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Hank.Schrader@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
-{ email: 'Walt-Jr..White@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
+{ email: 'Walt-Jr.White@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Marie .Schrader@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Saul.Goodman@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Gustavo.Fring@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Mike.Ehrmantraut@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
-{ email: 'Lydia.Rodarte-Quayle@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
+{ email: 'Lydia.Quayle@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Steven.Gomez@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Skinny.Pete@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Ted.Beneke@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
@@ -33,9 +33,27 @@ users = User.create([
 { email: 'Jane.Margolis@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' }
 ])
 workorders = Workorder.create([
+
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Scheduled' },
-{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' }
+{ manager: users[0], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
+{ manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[2], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Closed' },
+{ manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Closed' },
+{ manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[2], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
+{ manager: users[2], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' }
+
 
 ])

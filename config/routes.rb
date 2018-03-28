@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+
+  resources :workorders do
+    collection do
+      get 'filter'
+    end
+  end
+
   resources :interventions, only: [:show, :index] do
     member do
       post 'start'
@@ -8,12 +15,6 @@ Rails.application.routes.draw do
       post 'report'
     end
   end
-
-  resources :workorders
-
-
-
-
 
 
   devise_for :users
