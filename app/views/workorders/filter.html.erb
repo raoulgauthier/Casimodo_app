@@ -27,10 +27,9 @@
           <br><br>
 
           <div class="input-group">
-            By Date&nbsp;&nbsp;&nbsp;
-              <%= datetime_field :date_planned, as: :date_picker, class: "form-control"  %>
-
-          </div>
+            Due on&nbsp;
+              <%= date_select :date_planned, {}, {}, class: 'form-control col-md-3' %>
+            </div>
           <br>
 
           <div class="d-flex">

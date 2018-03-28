@@ -17,24 +17,19 @@ class WorkordersController < ApplicationController
     end
   end
 
-  # GET /workorders/1
   def show
   end
 
   def filter
   end
 
-  # GET /workorders/new
   def new
     @workorder = Workorder.new
   end
 
-
-  # GET /workorders/1/edit
   def edit
   end
 
-  # POST /workorders
   def create
     @workorder = Workorder.new(workorder_params)
 
@@ -45,7 +40,6 @@ class WorkordersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /workorders/1
   def update
     if @workorder.update!(workorder_params)
       redirect_to @workorder, notice: 'Workorder was successfully updated.'
