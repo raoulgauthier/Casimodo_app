@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.card-item-bottom-spacing {
+  margin-bottom: 12px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.workorders-table a {
+  color: black;
+  text-decoration: none;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+}
+

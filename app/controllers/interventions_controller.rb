@@ -29,7 +29,7 @@ class InterventionsController < ApplicationController
     @workorder.status = "Done"
     @workorder.date_done = DateTime.now
     @workorder.save
-    redirect_to intervention_path(@workorder)
+    redirect_to interventions_path
     # redirect_to interventions_path
   end
 
