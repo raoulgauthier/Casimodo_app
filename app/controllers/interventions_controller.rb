@@ -4,12 +4,17 @@ class InterventionsController < ApplicationController
   # before action check if technian
   # before action set technian
   before_action :set_workorder, only: [:show, :start, :stop, :report]
+  before_action :hide_nav
 
   def index
     @workorders = Workorder.all
     # return all workorder for that technician
   # private method
   # setting technician (all params)
+  end
+
+  def hide_nav
+    @hide_nav = true
   end
 
   def show
