@@ -5,17 +5,30 @@ class WorkordersController < ApplicationController
 
   # GET /workorders
   def index
-    @workorders = Workorder.all
+
+    if params[:technician].nil? && params[:manager].nil? & params[:status].nil?
+      @workorders = Workorder.all
+    else
+      query = {}
+      @tech = params[:technician][:id].blank? ? "" : query[:technician] = User.find(params[:technician][:id])
+      @manager =  params[:manager][:id].blank? ? "" : query[:manager] = User.find(params[:manager][:id])
+      @status = params[:status].blank? ? "" : query[:status] = params[:status]
+      @workorders = Workorder.where(query)
+    end
   end
 
   # GET /workorders/1
   def show
   end
 
+  def filter
+  end
+
   # GET /workorders/new
   def new
     @workorder = Workorder.new
   end
+
 
   # GET /workorders/1/edit
   def edit

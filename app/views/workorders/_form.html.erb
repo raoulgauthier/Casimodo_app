@@ -20,9 +20,9 @@
     <% end %>
 
     <%= f.form_group :date_planned, class: 'row' do |f| %>
-      <%= f.label :date_planned, class: 'control-label col-md-2' %>
+      <%= f.label :due_date, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10'>
-        <%= f.datetime_select :date_planned, class: 'form-control' %>
+        <%= f.datetime_field :date_planned, as: :datetime_picker %>
         <%= f.error_messages %>
       </div>
     <% end %>

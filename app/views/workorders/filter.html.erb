@@ -1,0 +1,49 @@
+
+<% @title = "Filter" %>
+
+<% content_for :description do %>
+<h4>Filter the Work Orders List</h4>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div id="content" class="col-12 col-md-9">
+      <div class="card ">
+        <div class="card-body">
+
+          <%= form_tag(workorders_path, method: :get, class: "form") do %>
+
+          <div class="input-group">
+          <%= collection_select(:manager, :id, User.where(user_type: 'manager').order(:email), :id, :email, {prompt: 'Select a manager'}, {class: "form-control"}) %>
+          </div>
+          <br><br>
+          <div class="input-group">
+          <%= collection_select(:technician, :id, User.where(user_type: 'technician').order(:email), :id, :email, {prompt: 'Select a technician'}, {class: "form-control"}) %>
+          </div>
+          <br><br>
+          <div class="input-group">
+            <%= select_tag :status, options_for_select(Workorder::STATUS), prompt: "select a status", class: "form-control" %>
+          </div>
+          <br><br>
+
+          <div class="input-group">
+            By Date&nbsp;&nbsp;&nbsp;
+              <%= datetime_field :date_planned, as: :date_picker, class: "form-control"  %>
+
+          </div>
+          <br>
+
+          <div class="d-flex">
+            <div class="ml-auto">
+              <%= submit_tag 'Apply the filter', class: "btn btn-primary special_button" %>
+              <% end %>
+              <%= link_to "Cancel", workorders_path, class: 'btn btn-outline-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

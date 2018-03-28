@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180327155643) do
     t.integer "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date_started"
     t.index ["manager_id"], name: "index_workorders_on_manager_id"
     t.index ["technician_id"], name: "index_workorders_on_technician_id"
   end
