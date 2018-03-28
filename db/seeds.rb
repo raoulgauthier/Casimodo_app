@@ -33,6 +33,7 @@ users = User.create([
 { email: 'Jane.Margolis@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' }
 ])
 workorders = Workorder.create([
+
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
 { manager: users[0], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
@@ -53,5 +54,6 @@ workorders = Workorder.create([
 { manager: users[2], technician: users[9], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' },
 { manager: users[2], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Open' },
 { manager: users[2], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Open' }
+
 
 ])
