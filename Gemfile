@@ -29,11 +29,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise'
+gem 'devise','~> 4.2'
+gem 'devise_invitable', '~> 1.7.0'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 source "https://gems.rapidrailsthemes.com/gems" do
   gem "rrt", "~> 1.0.18"

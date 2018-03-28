@@ -1,27 +1,35 @@
 class WorkordersController < ApplicationController
   layout "scaffold"
-
+  before_action :authenticate_user!
   before_action :set_workorder, only: [:show, :edit, :update, :destroy]
 
   # GET /workorders
   def index
-    @workorders = Workorder.all
+
+    if params[:technician].nil? && params[:manager].nil? & params[:status].nil?
+      @workorders = Workorder.all
+    else
+      query = {}
+      @tech = params[:technician][:id].blank? ? "" : query[:technician] = User.find(params[:technician][:id])
+      @manager =  params[:manager][:id].blank? ? "" : query[:manager] = User.find(params[:manager][:id])
+      @status = params[:status].blank? ? "" : query[:status] = params[:status]
+      @workorders = Workorder.where(query)
+    end
   end
 
-  # GET /workorders/1
   def show
   end
 
-  # GET /workorders/new
+  def filter
+  end
+
   def new
     @workorder = Workorder.new
   end
 
-  # GET /workorders/1/edit
   def edit
   end
 
-  # POST /workorders
   def create
     @workorder = Workorder.new(workorder_params)
 
@@ -32,9 +40,8 @@ class WorkordersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /workorders/1
   def update
-    if @workorder.update(workorder_params)
+    if @workorder.update!(workorder_params)
       redirect_to @workorder, notice: 'Workorder was successfully updated.'
     else
       render :edit

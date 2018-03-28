@@ -1,36 +1,49 @@
-<% @title = "Listing workorders" %>
+<% @title = "Work Orders" %>
 
 <% content_for :description do %>
-<p>Edit this template in <code>app/views/Workorders/index.html.erb</code>.</p>
+<h4>Work Orders Management Center </h4>
 <% end %>
 
 <% content_for :actions do %>
-<%= link_to new_workorder_path, class: 'btn btn-primary btn-large pull-right' do %>
+<%= link_to new_workorder_path, class: 'btn btn-primary btn-large' do %>
 <%= fa_icon_tag "plus" %> Add Workorder
+<% end %>&nbsp;
+<%= link_to filter_workorders_path, class: 'btn btn-primary btn-large' do %>
+<%= fa_icon_tag "filter" %> Filter the list
+<% end %>&nbsp;
+<%= link_to workorders_path, class: 'btn btn-primary btn-large' do %>
+<%= fa_icon_tag "th-list" %> All the list
 <% end %>
 <% end %>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
-      <div class="card card-sheet sheet-condensed">
+    <div class="col-12 col-md-12">
+      <div class="card sheet-condensed">
         <table class="table table-striped table-hover table-sm-responsive">
           <thead>
             <tr>
-              <th>Address / Description</th>
-              <th>Date planned / Date done</th>
-              <th>Report</th>
               <th>Status</th>
+              <th>Address / Description</th>
+              <th>Due Date / Date done</th>
+              <th>Report</th>
+              <th>Manager / Tech</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <% @workorders.each do |workorder| %>
             <tr>
+              <td>
+               <%= render 'icon_status', workorder: workorder %>
+              </td>
               <td><%= workorder.address %> <br> <%= workorder.description %></td>
-              <td><%= workorder.date_planned %> <br> <%= workorder.date_done %></td>
+              <!-- time_ago_in_words(workorder.date_planned) -->
+              <td><%= workorder.date_planned %> <br>
+                <%= workorder.date_done %></td>
               <td><%= workorder.report %></td>
-              <td><%= workorder.status %></td>
+              <td><%= workorder.manager.email %><br>
+              <strong><%= workorder.technician.email %></strong></td>
               <td class="actions text-right">
                 <div class="btn-group">
                   <%= link_to theme_icon_tag("eye"), workorder, 'data-toggle': 'tooltip', title: 'Show', class: "btn btn-link" %>
@@ -48,8 +61,6 @@
         </table>
       </div>
 
-
     </div>
-
   </div>
 </div>

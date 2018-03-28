@@ -1,0 +1,20 @@
+    <% if workorder.status == "Open" %>
+      <div class="card-body d-flex flex-column align-items-center justify-content-center  ">
+      <span style="font-size: 14px;"><i class="fa fa-unlock align-items-center"></i></span>
+      </div>
+    <% end %>
+    <% if workorder.status == "Scheduled" %>
+      <div class="card-body d-flex flex-column align-items-center justify-content-center  ">
+      <span style="font-size: 14px;"><i class="fa fa-calendar align-items-center"></i></span>
+      </div>
+    <% end %>
+    <% if workorder.status == "In progress" %>
+      <div class="card-body d-flex flex-column align-items-center justify-content-center  ">
+      <span style="font-size: 14px;"><i class="fa fa-refresh align-items-center"></i></span>
+      </div>
+    <% end %>
+    <% if workorder.status == "Closed" %>
+      <div class="card-body d-flex flex-column align-items-center justify-content-center  ">
+      <span style="font-size: 14px;"><i class="fa fa-lock align-items-center"></i></span>
+      </div>
+    <% end %>
