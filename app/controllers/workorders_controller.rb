@@ -47,7 +47,7 @@ class WorkordersController < ApplicationController
 
   # PATCH/PUT /workorders/1
   def update
-    if @workorder.update(workorder_params)
+    if @workorder.update!(workorder_params)
       redirect_to @workorder, notice: 'Workorder was successfully updated.'
     else
       render :edit
