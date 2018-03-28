@@ -7,10 +7,6 @@
   </div>
 </div>
 
-<% content_for :description do %>
-<p>Edit this template in <code>app/views/Workorders/show.html.erb</code>.</p>
-<% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-9">
@@ -18,112 +14,97 @@
         <div class="card-body">
           <div class="form-horizontal">
 
-            <div class="form-group row">
-              <label class="col-12 col-md-2 form-label">Address</label>
-              <div class="col-12 col-md-10 form-control uneditable-input">
-                <span>
-                  <%= @workorder.address %>
-                </span>
-              </div>
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Address</div>
+              <small>
+                <%= @workorder.address %>
+              </small>
             </div>
 
-            <div class="form-group row">
-              <label class="col-12 col-md-2 form-label">Description</label>
-              <div class="col-12 col-md-10 form-control uneditable-input">
-                <span>
-                  <%= @workorder.description %>
-                </span>
-              </div>
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Description</div>
+              <small>
+                <%= @workorder.description %>
+              </small>
             </div>
 
-            <div class="form-group row">
-              <label class="col-12 col-md-2 form-label">Date planned</label>
-              <div class="col-12 col-md-10 form-control uneditable-input">
-                <span>
-                  <%= @workorder.date_planned %>
-                </span>
-              </div>
+
+
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Due date</div>
+              <small>
+                <%= @workorder.date_planned %>
+              </small>
             </div>
 
             <% if @workorder.status == "Done" %>
-            <div class="form-group row">
-              <label class="col-12 col-md-2 form-label">Date done</label>
-              <div class="col-12 col-md-10 form-control uneditable-input">
-                <span>
-                  <%= @workorder.date_done %>
-                </span>
-              </div>
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Due date</div>
+              <small>
+                <%= @workorder.date_done %>
+              </small>
             </div>
             <% end %>
 
             <% if @workorder.status == "Done" %>
-            <div class="form-group row">
-              <label class="col-12 col-md-2 form-label">Report</label>
-              <div class="col-12 col-md-10 form-control uneditable-input">
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Report</div>
+              <small>
                 <%= @workorder.report %>
-              </div>
+              </small>
+            </div>
+            <% end %>
 
-               <% elsif @workorder.status == "In proces" %>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Report</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1"
-                rows="3"></textarea>
-                <% end %>
-              </div>
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Status</div>
+              <small>
+                <%= @workorder.status %>
+              </small>
+            </div>
+
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+              <div class="leading-normal">Manager</div>
+              <small>
+                <%= @workorder.manager.email %>
+              </small>
+            </div>
 
 
+            <% if @workorder.status == "In progress" %>
+            <%= form_tag(stop_intervention_path(@workorder)) do %>
 
-              <div class="form-group row">
-                <label class="col-12 col-md-2 form-label">Status</label>
-                <div class="col-12 col-md-10 form-control uneditable-input">
-                  <span>
-                    <%= @workorder.status %>
-                  </span>
+
+            <div class="card-item-body mr-auto card-item-bottom-spacing">
+             <label class=" form-label">Report</label>
+             <%= text_area_tag :report, "", class: "form-control"%>
+            </div>
+              <div class="row">
+                <div class="col-12">
+                  <%= submit_tag "Stop", class: "btn btn-primary btn-block"%>
+                  <% end %>
                 </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-12 col-md-2 form-label">Manager</label>
-                <div class="col-12 col-md-10 form-control uneditable-input">
-                  <span>
-                    <%= @workorder.manager.email %>
-                  </span>
-                </div>
-              </div>
-
-              <% if @workorder.status == "In progress" %>
-              <div class="form-group row">
-                <%= form_tag(stop_intervention_path(@workorder)) do %>
-                <div class="col-12 col-md-10 form-control">
-                 <label class="col-12 col-md-2 form-label">Report</label>
-                 <%= text_field_tag(:report) %>
-                 <%= submit_tag "Stop", class: "btn btn-primary"%>
-               </div>
                <% end %>
-               <% end %>
-             </div>
-           </div>
-           <div class="d-flex">
-            <div class="row">
+            </div>
 
-              <% if @workorder.status == "Scheduled" %>
-              <div class="col">
-                <%= form_tag(start_intervention_path(@workorder)) do %>
-                <%= submit_tag "Start", class: "btn btn-primary"%>
-                <% end %>
-              </div>
-              <% end %>
 
-              <% if @workorder.status == "Scheduled" || @workorder.status == "Done" %>
-              <div class="col">
-                <%= link_to 'Cancel', interventions_path, class: 'btn' %>
-              </div>
-              <% end %>
+                <div class="row">
+                  <% if @workorder.status == "Scheduled" %>
+                    <%= form_tag(start_intervention_path(@workorder), class: "col-6") do %>
+                    <%= submit_tag "Start", class: "btn btn-primary btn-block"%>
+                   <% end %>
+                  <%= link_to 'Cancel', interventions_path, class: 'btn col-6' %>
+                 <% end %>
 
+                 <% if @workorder.status == "Done" %>
+                 <div class="col-12">
+                  <%= link_to 'Cancel', interventions_path, class: 'btn btn-block' %>
+                 </div>
+                 <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
