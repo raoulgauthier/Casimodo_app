@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users do
   root to: 'landing_page#index'
+  end
 
   authenticated :user do
     root 'home#index'
