@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
 
-  resources :workorders
-
-
-
-
+  resources :workorders do
+    collection do
+      get 'filter'
+    end
+  end
 
 
   devise_for :users
