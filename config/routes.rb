@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  resources :interventions, only: [:show, :index] do
+    member do
+      post 'start'
+      post 'stop'
+      post 'report'
+    end
+  end
+
   resources :workorders
 
 
