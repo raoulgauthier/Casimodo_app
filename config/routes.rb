@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       post 'start'
       post 'stop'
+      post 'report'
     end
   end
 

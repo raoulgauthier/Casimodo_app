@@ -3,7 +3,7 @@ class InterventionsController < ApplicationController
 
   # before action check if technian
   # before action set technian
-  before_action :set_workorder, only: [:show, :start, :stop]
+  before_action :set_workorder, only: [:show, :start, :stop, :report]
 
   def index
     @workorders = Workorder.all
@@ -24,11 +24,24 @@ class InterventionsController < ApplicationController
   end
 
   def stop
+    @workorder.report = params[:report]
+
     @workorder.status = "Done"
     @workorder.date_done = DateTime.now
     @workorder.save
-    redirect_to interventions_path
+    redirect_to intervention_path(@workorder)
+    # redirect_to interventions_path
   end
+
+  def report
+    @workorder.save
+    redirect_to intervention_path(@workorder)
+
+  end
+
+
+
+  private
 
   def set_workorder
     @workorder = Workorder.find(params[:id])
