@@ -17,93 +17,6 @@
 <% end %>
 
 <div class="container">
-  <div class="card card-full-height card-tabbed overflow-visible  ">
-    <div class="card-header">
-      <h6>TASKS</h6>
-      <ul class="nav nav-tabs nav-tabs-primary card-header-tabs" id="navTab1"
-      role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="000_app_cards.html#navTab11"
-          role="tab" aria-controls="navTab11" aria-expanded="true">Open</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="000_app_cards.html#navTab12"
-          role="tab" aria-controls="navTab12" aria-expanded="false">Completed</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="000_app_cards.html#navTab13"
-          role="tab" aria-controls="navTab13" aria-expanded="false">Archived</a>
-        </li>
-      </ul>
-    </div>
-    <div class="card-body">
-      <div class="tab-content" id="taskListContent">
-        <div class="tab-pane fade active show" id="navTab11" role="tabpanel" aria-labelledby="navTab11"
-        aria-expanded="true">
-          <ol class="card-item-list">
-
-            <li class="card-item card-item-chip-primary">
-              <div class="checkbox">
-                <input id="checkbox1" type="checkbox">
-                <label for="checkbox1"></label>
-              </div>
-              <div class="card-item-body card-item-chip-primary mr-auto">
-                <div class="leading-normal">Ascenceur de gauche bloqué au RDC</div>
-                <small>
-                  <time class="text-uppercase text-muted">Due by 07:00 26th Dec 2018</time>
-                </small>
-              </div>
-            </li>
-
-            <li class="card-item card-item-chip-dark">
-              <div class="checkbox">
-                <input id="checkbox2" type="checkbox">
-                <label for="checkbox2"></label>
-              </div>
-              <div class="card-item-body mr-auto">
-                <div class="leading-normal">Take the Ghoul friend for a Halloween zip line</div>
-                <small>
-                  <time class="text-uppercase text-muted">Due by 12:21 20th Dec 2018</time>
-                </small>
-              </div>
-            </li>
-
-            <li class="card-item card-item-chip-danger">
-              <div class="checkbox">
-                <input id="checkbox3" type="checkbox">
-                <label for="checkbox3"></label>
-              </div>
-              <div class="card-item-body mr-auto">
-                <div class="leading-normal">Rebuild laptop to remove Russian spyware</div>
-                <small>
-                  <time class="text-uppercase text-muted">Due by 09:00 19th Dec 2018</time>
-                </small>
-              </div>
-
-            </li>
-            <li class="card-item card-item-chip-warning">
-              <div class="checkbox">
-                <input id="checkbox4" type="checkbox">
-                <label for="checkbox4"></label>
-              </div>
-              <div class="card-item-body mr-auto">
-                <div class="leading-normal">Cash out Yowli coins before expiry</div>
-                <small>
-                  <time class="text-uppercase text-muted">Due by 00:00 1st Dec 2018</time>
-                </small>
-              </div>
-
-            </li>
-          </ol>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
   <div class="row">
     <div class="col-12 col-md-12">
       <div class="card sheet-condensed">
@@ -125,7 +38,8 @@
                <%= render 'icon_status', workorder: workorder %>
               </td>
               <td><%= workorder.address %> <br> <%= workorder.description %></td>
-              <td><%= time_ago_in_words(workorder.date_planned) %> <br>
+              <!-- time_ago_in_words(workorder.date_planned) -->
+              <td><%= workorder.date_planned %> <br>
                 <%= workorder.date_done %></td>
               <td><%= workorder.report %></td>
               <td><%= workorder.manager.email %><br>

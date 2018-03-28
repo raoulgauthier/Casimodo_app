@@ -3,6 +3,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
     <%= f.form_group :address, class: 'row' do |f| %>
       <%= f.label :address, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10'>
@@ -22,7 +23,9 @@
     <%= f.form_group :date_planned, class: 'row' do |f| %>
       <%= f.label :due_date, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10'>
-        <%= f.datetime_field :date_planned, as: :datetime_picker %>
+        <div class="form-row">
+        <%= f.datetime_select :date_planned, {}, class: 'form-control col-2' %>
+        </div>
         <%= f.error_messages %>
       </div>
     <% end %>
@@ -30,8 +33,10 @@
     <%= f.form_group :date_done, class: 'row' do |f| %>
       <%= f.label :date_done, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10'>
-        <%= f.datetime_select :date_done, class: 'form-control' %>
-        <%= f.error_messages %>
+        <div class="form-row">
+         <%= f.datetime_select :date_done, {}, class: 'form-control col-2' %>
+         </div>
+         <%= f.error_messages %>
       </div>
     <% end %>
 
@@ -51,19 +56,28 @@
       </div>
     <% end %>
 
-    <div class="row">
+    <%= f.form_group :status, class: 'row' do |f| %>
       <%= f.label :Manager, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10 input-group'>
-      <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: @workorder.manager.email}, {class: "form-control"}  %>
+        <%if params[:id] %>
+          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: @workorder.manager.email}, {class: "form-control"}  %>
+        <% else %>
+          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: 'select a manager'}, {class: "form-control"}  %>
+        <% end %>
       </div>
-    </div>
 
-    <div class=" row">
+    <% end %>
+
+    <%= f.form_group :status, class: 'row' do |f| %>
       <%= f.label :Technician, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10 input-group'>
+      <%if params[:id] %>
       <%= f.select(:technician_id, User.where(user_type: 'technician').order(:email).collect {|u| [u.email, u.id]}, {prompt: @workorder.technician.email}, {class: "form-control"}) %>
+      <% else %>
+        <%= f.select(:technician_id, User.where(user_type: 'technician').order(:email).collect {|u| [u.email, u.id]}, {prompt: 'select a technician'}, {class: "form-control"}) %>
+      <% end %>
       </div>
-    </div>
+    <% end %>
 
     <div class="d-flex">
       <div class="ml-auto">
@@ -73,5 +87,6 @@
     </div>
 
   </div>
+
 <% end %>
 
