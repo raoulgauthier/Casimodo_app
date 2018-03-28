@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <%= html_tag :lang => "en" do %>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
-      you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
+    you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
     <meta name="turbolinks-cache-control" content="no-cache">
 
     <title><%= [@title, app_name].compact.join(" - ") %></title>
@@ -29,171 +29,230 @@
 
   <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
 
-<div class="card">
-  <div class="card-body" id="padding_zero">
-    <header class="landing-header-1" style="background-image: url(https://images.unsplash.com/photo-1500021804447-2ca2eaaaabeb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=510608b1165db1e48889a8a059dd5d1e&auto=format&fit=crop&w=1500&q=80)">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
-              <a href="javascript:" class="navbar-brand d-lg-none">
-                <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
-                alt="Pyrrmid 64">YUMAN</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse"
-              data-target="#standardLandingNavbarWithCenteredBrand" aria-controls="standardLandingNavbarWithCenteredBrand"
-              aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse text-white" id="standardLandingNavbarWithCenteredBrand">
-                <ul class="nav navbar-nav navbar-left">
-                  <li class="nav-item ">
-                    <a class="nav-link" href="javascript:">HOME</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="javascript:">ABOUT</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="javascript:">TEAM</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="javascript:">CONTACT</a>
-                  </li>
-                </ul>
-                <a href="javascript:" class="navbar-brand navbar-center text-center d-none d-sm-none d-md-none d-lg-block">
-                  <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
-                  alt="Pyrrmid 64">YUMAN</a>
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="nav-item">
+    <div class="card">
+      <div class="card-body" id="padding_zero">
+        <header class="landing-header-1" style="background-image: url(https://images.unsplash.com/photo-1500021804447-2ca2eaaaabeb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=510608b1165db1e48889a8a059dd5d1e&auto=format&fit=crop&w=1500&q=80)">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
+                  <a href="javascript:" class="navbar-brand d-lg-none">
+                    <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
+                    alt="Pyrrmid 64">YUMAN</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#standardLandingNavbarWithCenteredBrand" aria-controls="standardLandingNavbarWithCenteredBrand"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse text-white" id="standardLandingNavbarWithCenteredBrand">
+                    <ul class="nav navbar-nav navbar-left">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="javascript:">HOME</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="javascript:">ABOUT</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="javascript:">TEAM</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="javascript:">CONTACT</a>
+                      </li>
+                    </ul>
+                    <a href="javascript:" class="navbar-brand navbar-center text-center d-none d-sm-none d-md-none d-lg-block">
+                      <img width="32" height="32" class="mr-2" src="../../assets/rrt/pyrrmid_64-358e6a66b8417ea853d0507672b757411c4c7bb389cb91e8a24c71c33698ee79.png"
+                      alt="Pyrrmid 64">YUMAN</a>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
 
-                  <a href="/users/sign_in"class="btn btn-sm btn-outline-light text-white text-hover-dark" href="javascript:">SIGN IN</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/users/sign_up" class="btn btn-sm btn-primary" href="javascript:">Demo</a>
-                  </li>
-                </ul>
+                          <a href="/users/sign_in"class="btn btn-sm btn-outline-light text-white text-hover-dark" href="javascript:">SIGN IN</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="btn btn-sm btn-primary" href="javascript:" data-toggle="modal" data-target="#Demo">Demo</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
               </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div class="container header-caption">
-        <div class="row">
-          <div class="col-12 col-md-7 px-5">
-            <div class="text-white">
-              <h1 class="mt-5 font-weight-bold leading-tight">WELCOME TO THE NEW THING</h1>
-              <p class="lead">Lorem ea sit vel laudantium numquam vel officiis impedit aliquam! Perspiciatis
-                maiores veniam perspiciatis rem debitis.</p>
             </div>
-            <a href="/users/sign_up" class="btn btn-primary text-white">Request a demo</a>
-            <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
-          </div>
+            <div class="container header-caption">
+              <div class="row">
+                <div class="col-12 col-md-7 px-5">
+                  <div class="text-white">
+                    <h1 class="mt-5 font-weight-bold leading-tight">WELCOME TO THE NEW THING</h1>
+                    <p class="lead">Lorem ea sit vel laudantium numquam vel officiis impedit aliquam! Perspiciatis
+                    maiores veniam perspiciatis rem debitis.</p>
+                  </div>
+                  <a class="btn btn-primary text-white" data-toggle="modal" data-target="#Demo">Request a demo</a>
+                  <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
+                </div>
+              </div>
+            </div>
+          </header>
         </div>
       </div>
-    </header>
-  </div>
-</div>
 
-<div class=" ">
-  <div class="container">
-    <h2 class="text-center header-separator mt-4">Our Amazing Partners</h2>
-    <p class="text-center lead text-uppercase mb-5">Ipsum aliquam optio est maxime quam. Neque tempore voluptas a veritatis.</p>
-    <div
-    class="row">
-      <div class="col-12 col-md-4">
-        <div class="media mb-4 border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-eye h2"></i>
-            <h5 class="mt-0">Feature 1</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+      <div class=" ">
+        <div class="container">
+          <h2 class="text-center header-separator mt-4">Our Amazing Partners</h2>
+          <p class="text-center lead text-uppercase mb-5">Ipsum aliquam optio est maxime quam. Neque tempore voluptas a veritatis.</p>
+          <div
+          class="row">
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-eye h2"></i>
+                <h5 class="mt-0">Feature 1</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="media mb-4 border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-hand-stop h2"></i>
-            <h5 class="mt-0">Feature 2</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-hand-stop h2"></i>
+                <h5 class="mt-0">Feature 2</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="media mb-4 border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-info h2"></i>
-            <h5 class="mt-0">Feature 1</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-info h2"></i>
+                <h5 class="mt-0">Feature 1</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="media mb-4 border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-ticket h2"></i>
-            <h5 class="mt-0">Feature 1</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-ticket h2"></i>
+                <h5 class="mt-0">Feature 1</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="media border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-panel h2"></i>
-            <h5 class="mt-0">Feature 1</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+          <div class="col-12 col-md-4">
+            <div class="media border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-panel h2"></i>
+                <h5 class="mt-0">Feature 1</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="media mb-4 border border-2x p-3 text-center">
-          <div class="media-body">
-            <i class="ti-bolt h2"></i>
-            <h5 class="mt-0">Feature 1</h5>
-            <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-              ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-              viverra turpis.</p>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-bolt h2"></i>
+                <h5 class="mt-0">Feature 1</h5>
+                <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                  ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                viverra turpis.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-  </div>
-</div>
-</div>
-
-<%= render 'footer' %>
-
- <!-- Modal class "try to have a demo request" -->
-
-<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header justify-content-center">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            <i class="ti-close "></i>
-          </button>
-          <h4 class="title title-up">Modal Dialog title</h4>
-        </div>
-        <div class="modal-body">
-          <p>Green juice raw denim vinyl williamsburg neutra celiac austin mlkshk,
-            shoreditch jean shorts mustache quinoa. Chicharrones banjo jean shorts
-            swag prism godard pitchfork air plant keffiyeh shoreditch. Polaroid heirloom
-            vice drinking vinegar poke, raw denim pitchfork cliche art party umami
-            cred unicorn readymade.</p>
-        </div>
-        <div class="modal-footer d-flex justify-content-end">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Got it</button>
         </div>
       </div>
     </div>
 
+    <%= render 'footer' %>
 
-  </body>
-<% end %>
+    <!-- Modal class "try to have a demo request" -->
+    <div class="modal fade" id="Demo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+            Demo request</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+
+          <div class="modal-body">
+
+            <form>
+
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="string" class="form-control" id="inputEmail3" placeholder="Your name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Firm </label>
+                <div class="col-sm-10">
+                  <input type="string" class="form-control" id="inputEmail3" placeholder="Company name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+
+      <!--         <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-legend col-sm-2">Radios</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                        value="option1" checked="">Option one is this and that—be sure to include why it's great</label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                          value="option2">Option two can be something else and selecting it will deselect option
+                        one</label>
+                      </div>
+                      <div class="form-check disabled">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                          value="option3" disabled="">Option three is disabled</label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="form-group row">
+                    <div class="col-sm-2">Checkbox</div>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox">Check me out</label>
+                        </div>
+                      </div>
+                    </div> -->
+
+
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Send the request</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      </body>
+    <% end %>
