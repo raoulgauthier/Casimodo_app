@@ -26,3 +26,7 @@ devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+# root :to => "pages#home", :constraints => lambda { |request|!request.env['warden'].user}
+# root :to => 'customer/dashboard#index', :constraints => lambda { |request| request.env['warden'].user.type == 'customer' }
+# root :to => 'admin/dashboard#index', :constraints => lambda { |request| request.env['warden'].user.type == 'admin' }
