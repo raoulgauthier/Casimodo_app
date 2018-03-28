@@ -1,6 +1,6 @@
 class WorkordersController < ApplicationController
   layout "scaffold"
-
+  before_action :authenticate_user!
   before_action :set_workorder, only: [:show, :edit, :update, :destroy]
 
   # GET /workorders

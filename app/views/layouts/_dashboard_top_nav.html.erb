@@ -11,10 +11,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Servers</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="/workorders">Workorders</a>
       </li>
     </ul>
     <%= yield :navbar %>
@@ -66,7 +66,11 @@
               <div class="list-group">
                 <a href="#" class="list-group-item">
                   <div class="media">
-                    <%= random_avatar 32, "d-flex mr-3 rounded-circle" %>
+
+                    <span style="font-size: 48px;">
+                    <i class="fa fa-user d-flex mr-3 rounded-circle"></i>
+                    </span>
+
                     <div class="media-body">
                       <p>My name is Inigo Montoya.</p>
                       <small class="text-muted d-block">10 minutes ago</small>
@@ -100,14 +104,21 @@
       </li>
       <li class="nav-item dropdown user-nav">
         <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= random_avatar 34, "avatar rounded-circle" %>
+
+          <span style="font-size: 48px;">
+          <i class="ti-user d-flex mr-3 rounded-circle"></i>
+          </span>
           <span class="caret caret-light"></span>
         </a>
         <ul class="dropdown-menu dropdown-menu-right" role="menu">
           <li class="dropdown-item text-center">
             <div class="card">
               <div class="card-body">
-                <%= random_avatar 120, "avatar img-rounded" %>
+
+                <span style="font-size: 48px;">
+                    <i class="fa fa-user avatar img-rounded"></i>
+                    </span>
+
                 <p class="m0 p0 d-block">
                   Fill Murray
                 </p>
@@ -120,9 +131,12 @@
                   </a>
                 </div>
                 <div>
-                  <a href="#" class="btn ">
+                  <%= link_to destroy_user_session_path, class:"btn", method: :delete do %>
+              <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+                 <!--  <a href="/users/sign_out" class="btn ">
                     Log Out
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
