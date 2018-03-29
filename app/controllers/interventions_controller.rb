@@ -3,7 +3,7 @@ class InterventionsController < ApplicationController
 
   # before action check if technian
   # before action set technian
-  before_action :set_workorder, only: [:show, :start, :stop, :report]
+  before_action :set_workorder, only: [:show, :start, :stop, :report, :new_photo]
   before_action :hide_nav
 
   def index
@@ -18,6 +18,7 @@ class InterventionsController < ApplicationController
   end
 
   def show
+    @new_photo = Photo.new
   end
 
   def start
@@ -31,11 +32,15 @@ class InterventionsController < ApplicationController
   def stop
     @workorder.report = params[:report]
 
-    @workorder.status = "Done"
-    @workorder.date_done = DateTime.now
-    @workorder.save
-    redirect_to interventions_path
+    if !@workorder.report || @workorder.report.blank?
+      redirect_to intervention_path(@workorder), :flash => { :alert => "Please fill in the report!" }
+    else
+      @workorder.status = "Done"
+      @workorder.date_done = DateTime.now
+      @workorder.save
+      redirect_to interventions_path
     # redirect_to interventions_path
+    end
   end
 
   def report
@@ -43,10 +48,18 @@ class InterventionsController < ApplicationController
     redirect_to intervention_path(@workorder)
 
   end
-
+  def new_photo
+    photo = Photo.new(photo_params)
+    photo.workorder = @workorder
+    photo.save
+    redirect_to intervention_path(@workorder)
+  end
 
 
   private
+  def photo_params
+    params.require(:photo).permit(:photo)
+  end
 
   def set_workorder
     @workorder = Workorder.find(params[:id])
