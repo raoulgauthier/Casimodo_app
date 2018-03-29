@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post 'start'
       post 'stop'
       post 'report'
+      post 'new_photo'
     end
   end
 
