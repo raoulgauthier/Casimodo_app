@@ -5,6 +5,8 @@
 <h4>Filter the Work Orders List</h4>
 <% end %>
 
+
+
 <div class="container">
   <div class="row">
     <div id="content" class="col-12 col-md-9">
@@ -16,19 +18,23 @@
           <div class="input-group">
           <%= collection_select(:manager, :id, User.where(user_type: 'manager').order(:email), :id, :email, {prompt: 'Select a manager'}, {class: "form-control"}) %>
           </div>
-          <br><br>
+          <br>
           <div class="input-group">
           <%= collection_select(:technician, :id, User.where(user_type: 'technician').order(:email), :id, :email, {prompt: 'Select a technician'}, {class: "form-control"}) %>
           </div>
-          <br><br>
+          <br>
           <div class="input-group">
             <%= select_tag :status, options_for_select(Workorder::STATUS), prompt: "select a status", class: "form-control" %>
           </div>
-          <br><br>
+          <br>
 
-          <div class="input-group" id="due-date-input">
-            Due on&nbsp;
-              <%= date_select :date_planned, {}, {}, class: 'form-control col-md-3' %>
+          <div class="input-group">
+              <%= select_tag :due_date_selector, options_for_select(@due_date_selector), class: 'form-control' %>
+            </div>
+          <br>
+
+          <div class="input-group" id="due_date_input">
+
             </div>
           <br>
 
@@ -46,3 +52,15 @@
 </div>
 </div>
 
+<script>
+  document.getElementById('due_date_selector').addEventListener('change', function(e) {
+    // console.log('hzy in jks');
+     let resultat =  e.currentTarget.value;
+     // console.log(resultat);
+     if( resultat === "Filter on due date")  {
+        document.getElementById('due_date_input').innerHTML =  "<%= j date_select :date_planned, {}, {}, class: 'form-control col-md-4' %>";
+     } else {
+         document.getElementById('due_date_input').innerHTML =  " " ;
+     }
+  }  );
+</script>
