@@ -12,7 +12,7 @@ User.delete_all
 users = User.create([
 { email: 'Don.Draper@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
 { email: 'Roger.Sterling@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
-{ email: 'rarajr@hotmail.com.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
+{ email: 'rarakr@hotmail.com.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
 { email: 'Pete.Campbell@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
 { email: 'Joan.Harris@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'manager' },
 { email: 'Walter.White@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
@@ -30,7 +30,8 @@ users = User.create([
 { email: 'Ted.Beneke@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Asac.Merkert@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Tyrus.Kitt@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
-{ email: 'rarajr@hotmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
+{ email: 'raragr@hotmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
+{ email: 'rarajr@hotmail.com', password: '123456', phone: '33 1 23 45 88 89', user_type: 'technician' },
 ])
 workorders = Workorder.create([
 
