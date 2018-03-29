@@ -4,35 +4,25 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
     you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
     <meta name="turbolinks-cache-control" content="no-cache">
-
     <title><%= [@title, app_name].compact.join(" - ") %></title>
-
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'%>
     <%= yield :styles %>
-
     <%= favicon_link_tag %>
     <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
-
     <%= render 'layouts/external_js_libs' %>
     <%= yield :external_js_libs %>
     <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
-
     <%= yield :javascript %>
     <%= yield :head %>
   </head>
-
   <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
-
     <div class="card">
       <div class="card-body img-fluid"  id="padding_zero">
         <header class="landing-header-1" style="background-image: linear-gradient(-225deg, rgba(0,101,110,0.4) 0%, rgba(0,36,61,0.4) 50%), url(https://images.unsplash.com/photo-1485848018738-1705045b4a57?ixlib=rb-0.3.5&s=d0faf6ff0770cc0bf8858ee65a213467&auto=format&fit=crop&w=3449&q=80)">
-
           <div class="container">
             <div class="row">
               <div class="col-12">
@@ -89,7 +79,6 @@
           </header>
         </div>
       </div>
-
       <div class=" ">
         <div class="container">
           <h2 class="text-center header-separator mt-4">Stay Connected With the Field</h2>
@@ -155,7 +144,6 @@
     </div>
 
     <%= render 'footer' %>
-
     <!-- Modal class "try to have a demo request" -->
     <div class="modal fade" id="Demo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -167,77 +155,44 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <div class="modal-body" id="demo_form">
 
-
-          <div class="modal-body">
-
-            <form>
-
-              <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                  <input type="string" class="form-control" id="inputEmail3" placeholder="Your name">
-                </div>
-              </div>
+            <%= render "form" %>
+            <!-- <form>
 
               <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Firm </label>
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                  <input type="string" class="form-control" id="inputEmail3" placeholder="Company name">
+                  <input type="string" class="form-control" name="name" id="name" placeholder="Your name">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <label for="company" class="col-sm-2 col-form-label">Firm </label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  <input type="string" class="form-control" name="company" id="company" placeholder="Company name">
                 </div>
               </div>
 
-      <!--         <fieldset class="form-group">
-                <div class="row">
-                  <legend class="col-form-legend col-sm-2">Radios</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                        value="option1" checked="">Option one is this and that—be sure to include why it's great</label>
-                      </div>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                          value="option2">Option two can be something else and selecting it will deselect option
-                        one</label>
-                      </div>
-                      <div class="form-check disabled">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
-                          value="option3" disabled="">Option three is disabled</label>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="form-group row">
-                    <div class="col-sm-2">Checkbox</div>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox">Check me out</label>
-                        </div>
-                      </div>
-                    </div> -->
-
-
-                      <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Send the request</button>
-                    </div>
-                  </form>
+              <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 </div>
               </div>
-            </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close</button>
+
+                <button type="button" class="btn btn-primary">Send the request</button>
+              </div>
+
+            </form> -->
           </div>
+        </div>
+      </div>
+    </div>
 
-
-      </body>
-    <% end %>
+  </body>
+<% end %>

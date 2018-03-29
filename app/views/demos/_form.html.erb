@@ -1,0 +1,19 @@
+<%= simple_form_for(@demo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <p> Name </p>
+    <%= f.input :name, placeholder: "ex: Jack Lang", label: false%>
+    <p> Company Name </p>
+    <%= f.input :company, placeholder: "ex: Yuman", label: false %>
+    <p> Email </p>
+    <%= f.input :email, placeholder: "ex: Jack.Lang@yuman.com", label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+
