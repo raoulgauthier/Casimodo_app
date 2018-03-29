@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<%= html_tag :lang => "en" do %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
+    you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <title><%= [@title, app_name].compact.join(" - ") %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'%>
+    <%= yield :styles %>
+    <%= favicon_link_tag %>
+    <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
+    <%= render 'layouts/external_js_libs' %>
+    <%= yield :external_js_libs %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
+    <%= yield :javascript %>
+    <%= yield :head %>
+  </head>
+  <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
+    <div class="card">
+      <div class="card-body img-fluid"  id="padding_zero">
+        <header class="landing-header-1" style="background-image: linear-gradient(-225deg, rgba(0,101,110,0.4) 0%, rgba(0,36,61,0.4) 50%), url(https://images.unsplash.com/photo-1485848018738-1705045b4a57?ixlib=rb-0.3.5&s=d0faf6ff0770cc0bf8858ee65a213467&auto=format&fit=crop&w=3449&q=80)">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
+                  <a href="javascript:" class="navbar-brand d-lg-none">
+                    <p>Yuman</p>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#standardLandingNavbarWithCenteredBrand" aria-controls="standardLandingNavbarWithCenteredBrand"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse text-white" id="standardLandingNavbarWithCenteredBrand">
+                    <ul class="nav navbar-nav navbar-left">
+                      <li class="nav-item ">
+                        <a class="nav-link text-white" href="javascript:">HOME</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link text-white" href="javascript:">ABOUT</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link text-white" href="javascript:">TEAM</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link text-white" href="javascript:">CONTACT</a>
+                      </li>
+                    </ul>
+                    <p class="navbar-brand navbar-center text-center d-none d-sm-none d-md-none d-lg-block font-weight-bold">Yuman</p>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                          <a href="/users/sign_in"class="btn btn-sm btn-outline-light text-white text-hover-dark" href="javascript:">SIGN IN</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="btn btn-sm btn-primary" href="javascript:" data-toggle="modal" data-target="#Demo">Demo</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="container header-caption">
+              <div class="row">
+                <div class="col-12 col-md-10 px-5">
+                  <div class="text-white">
+                    <h1 class="mt-5 font-weight-bold ">INCREASE YOUR PRODUCTIVITY AND QUALITY OF SERVICE</h1>
+                    <h4 class="">Choose a user-friendly CMMS for Facility and Asset Management</h4>
+                    <br><br>
+                  </div>
+                  <a class="btn btn-primary text-white" data-toggle="modal" data-target="#Demo">Request a demo</a>
+                  <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      </div>
+      <div class=" ">
+        <div class="container">
+          <h2 class="text-center header-separator mt-4">Stay Connected With the Field</h2>
+          <p class="text-center lead text-uppercase mb-5">Yuman! The #1 rated software to run your Field Service Management business</p>
+          <div
+          class="row">
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-mobile h2"></i>
+                <h5 class="mt-0">For the field</h5>
+                <p class="small">Thanks to Yuman, your Field Technicians have real-time visibility and tools to get their jobs done faster and smarter. Yuman Allows them to complete quickly Work Orders.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-desktop h2"></i>
+                <h5 class="mt-0">Scheduling Faster</h5>
+                <p class="small">Create a job and assign it instantly to the most appropriate technician. Scheduling with Yuman gives you the flexibility you need to book tasks faster.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-location-pin h2"></i>
+                <h5 class="mt-0">Map view</h5>
+                <p class="small">At a glance you know where are your technicians and what they are doing. You know in real-time the current and future team availability through calendaring and geolocalization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-comment-alt h2"></i>
+                <h5 class="mt-0">Real-time Notifications</h5>
+                <p class="small">As soon as you make a schedule change, the technicians receive a notification on their phone. They’ll get a notification in the field if they have a new, rescheduled, or cancelled visit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="media border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-comments-smiley h2"></i>
+                <h5 class="mt-0">Happy to Support</h5>
+                <p class="small">Our consultant team will be more than happy to provide an outstanding technical support to you. You can reach us as well by phone, chat or email. We answser in minutes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="media mb-4 border border-2x p-3 text-center">
+              <div class="media-body">
+                <i class="ti-stats-up h2"></i>
+                <h5 class="mt-0">KPI</h5>
+                <p class="small">Right Metrics and KPIs will help you evaluate the performance and progress of your business. Through Yuman you will increase productivity, quality of service and revenues</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'footer' %>
+    <!-- Modal class "try to have a demo request" -->
+    <div class="modal fade" id="Demo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+            Demo request</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="demo_form">
+
+            <%= render "form" %>
+            <!-- <form>
+
+              <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="string" class="form-control" name="name" id="name" placeholder="Your name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="company" class="col-sm-2 col-form-label">Firm </label>
+                <div class="col-sm-10">
+                  <input type="string" class="form-control" name="company" id="company" placeholder="Company name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close</button>
+
+                <button type="button" class="btn btn-primary">Send the request</button>
+              </div>
+
+            </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+<% end %>
