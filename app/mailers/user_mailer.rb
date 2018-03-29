@@ -12,4 +12,11 @@ class UserMailer < ApplicationMailer
     @company = company
     mail(to: "casimodo.be@gmail.com", subject: "new demo demand")
   end
+
+def workorder_alert(workorder)
+
+  @workorder = workorder
+
+    mail(to: @workorder.technician.email , subject: "Alert ==> New Workorder")
+  end
 end
