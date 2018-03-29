@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328135837) do
+ActiveRecord::Schema.define(version: 20180329092213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20180328135837) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "workorder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workorder_id"], name: "index_photos_on_workorder_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,8 +69,8 @@ ActiveRecord::Schema.define(version: 20180328135837) do
     t.datetime "date_done"
     t.text "report"
     t.string "status"
-    t.bigint "manager_id"
-    t.bigint "technician_id"
+    t.integer "manager_id"
+    t.integer "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_started"
@@ -70,6 +78,5 @@ ActiveRecord::Schema.define(version: 20180328135837) do
     t.index ["technician_id"], name: "index_workorders_on_technician_id"
   end
 
-  add_foreign_key "workorders", "users", column: "manager_id"
-  add_foreign_key "workorders", "users", column: "technician_id"
+  add_foreign_key "photos", "workorders"
 end

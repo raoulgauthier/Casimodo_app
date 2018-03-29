@@ -3,5 +3,6 @@ class Workorder < ApplicationRecord
       class_name: 'User'
   belongs_to :technician,
       class_name: 'User', optional: true
+  has_many :photos
   STATUS = ["Open", "Scheduled", "In progress", "Closed"]
 end
