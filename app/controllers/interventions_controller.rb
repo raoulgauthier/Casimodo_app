@@ -7,7 +7,8 @@ class InterventionsController < ApplicationController
   before_action :hide_nav
 
   def index
-    @workorders = current_user.workorders
+    @date = Date.today
+    @workorders = current_user.workorders.where(date_planned: @date.all_day)
   end
 
   def hide_nav
