@@ -78,9 +78,15 @@
             <div class="form-group row">
               <label class="col-md-2 form-label">Technician</label>
               <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                  <%= @workorder.technician.email %>
-              </div>
+              <% if @workorder.technician %>
+                <div class="form-control uneditable-input">
+                    <%= @workorder.technician.email %>
+                </div>
+              <% else %>
+                 <div class="form-control uneditable-input">
+                  &nbsp;
+                 </div>
+              <% end %>
               </div>
             </div>
 

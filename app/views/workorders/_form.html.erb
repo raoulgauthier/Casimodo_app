@@ -64,18 +64,19 @@
         <% else %>
           <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: 'select a manager'}, {class: "form-control"}  %>
         <% end %>
+        <%= f.error_messages %>
       </div>
-
     <% end %>
 
     <%= f.form_group :status, class: 'row' do |f| %>
       <%= f.label :Technician, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10 input-group'>
-      <%if params[:id] %>
+      <%if params[:id] && @workorder.technician %>
       <%= f.select(:technician_id, User.where(user_type: 'technician').order(:email).collect {|u| [u.email, u.id]}, {prompt: @workorder.technician.email}, {class: "form-control"}) %>
       <% else %>
         <%= f.select(:technician_id, User.where(user_type: 'technician').order(:email).collect {|u| [u.email, u.id]}, {prompt: 'select a technician'}, {class: "form-control"}) %>
       <% end %>
+      <%= f.error_messages %>
       </div>
     <% end %>
 

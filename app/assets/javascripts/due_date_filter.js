@@ -1,0 +1,2 @@
+
+$('#due-date-input').hide()

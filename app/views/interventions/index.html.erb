@@ -40,6 +40,11 @@
                 <br> <%= workorder.address %> <% end %></td>
 
                 <td><%= link_to intervention_path(workorder) do %>
+                  <% if workorder.status == "Open"%>
+                  <span class="badge badge-danger btn-block text-white">
+                    <%= workorder.status %> <% end %>
+                  </span>
+
                   <% if workorder.status == "Scheduled"%>
                   <span class="badge badge-warning btn-block text-white">
                     <%= workorder.status %> <% end %>
@@ -50,7 +55,7 @@
                     <%= workorder.status %> <% end %>
                   </span>
 
-                  <% if workorder.status == "Done"%>
+                  <% if workorder.status == "Closed"%>
                   <span class="badge badge-success btn-block text-white">
                     <%= workorder.status %> <% end %>
                   </span>
