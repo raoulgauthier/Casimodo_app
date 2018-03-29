@@ -18,6 +18,9 @@
 .card-item-bottom-spacing {
   margin-bottom: 12px;
 }
+.chronology-bottom-spacing {
+  margin-bottom: 1px;
+}
 
 .button-div {
   display: flex;
@@ -33,7 +36,6 @@
   background-color: #ffc107;
 }
 
-
 #demo_form {
   padding-top: 0px;
 }
@@ -48,4 +50,8 @@
 
 small {
   font-size: 15px;
+}
+
+small-13 {
+  font-size: 13px;
 }
