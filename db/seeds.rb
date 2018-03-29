@@ -35,8 +35,8 @@ users = User.create([
 puts "helllo raoul"
 workorders = Workorder.create([
 
-{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
-{ manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
+{ manager: users[0], technician: users[5], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,29,10,15', status:'Scheduled' },
+{ manager: users[0], technician: users[5], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,3,29,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[14], address: '5 place Sainte-Gudule, bruxelles', description: 'chauffage en panne', date_planned: '2018,3,27,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },
 { manager: users[0], technician: users[7], address: '5 place Sainte-Gudule, bruxelles', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,27,10,15', status:'Scheduled' },

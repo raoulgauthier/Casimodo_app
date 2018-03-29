@@ -3,5 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :workorders
+  def workorders
+      if self.user_type == "technician"
+        Workorder.where(technician_id: self.id)
+      elsif self.user_type == "manager"
+        Workorder.where(manager_id: self.id)
+
+      end
+    end
 end
