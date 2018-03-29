@@ -6,13 +6,15 @@ class WorkordersController < ApplicationController
   # GET /workorders
   def index
 
-    if params[:technician].nil? && params[:manager].nil? & params[:status].nil?
+    if params[:technician].nil? && params[:manager].nil? & params[:status].nil? & params[:date_planned].nil?
       @workorders = Workorder.all
     else
       query = {}
       @tech = params[:technician][:id].blank? ? "" : query[:technician] = User.find(params[:technician][:id])
       @manager =  params[:manager][:id].blank? ? "" : query[:manager] = User.find(params[:manager][:id])
       @status = params[:status].blank? ? "" : query[:status] = params[:status]
+      @date_planned = params[:date_planned].blank? ? "" : query[:date_planned] = DateTime.parse(params[:date_planned]["{}(1i)"] +"-"+ params[:date_planned]["{}(2i)"] +"-"+ params[:date_planned]["{}(3i)"]).all_day
+      p query[:date_planned]
       @workorders = Workorder.where(query)
     end
   end

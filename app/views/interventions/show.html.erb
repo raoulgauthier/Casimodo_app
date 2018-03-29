@@ -31,8 +31,6 @@
               </small>
             </div>
 
-
-
             <div class="card-item-body mr-auto card-item-bottom-spacing">
               <div class="leading-normal">Due date</div>
               <small>
@@ -98,7 +96,7 @@
                   <%= link_to 'Cancel', interventions_path, class: 'btn col-6' %>
                  <% end %>
 
-                 <% if @workorder.status == "Done" %>
+                 <% if @workorder.status == "Closed" %>
                  <div class="col-12">
                   <%= link_to 'Cancel', interventions_path, class: 'btn btn-block' %>
                  </div>

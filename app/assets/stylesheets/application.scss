@@ -18,6 +18,9 @@
 .card-item-bottom-spacing {
   margin-bottom: 12px;
 }
+.chronology-bottom-spacing {
+  margin-bottom: 1px;
+}
 
 .button-div {
   display: flex;
@@ -34,7 +37,7 @@
 }
 
 .blur {
-  filter: blur(0px);
+  filter: blur(6px);
 }
 
 #report {
@@ -47,4 +50,8 @@
 
 small {
   font-size: 15px;
+}
+
+small-13 {
+  font-size: 13px;
 }
