@@ -15,7 +15,7 @@ before_action :hide_nav
     name = params[:demo][:name]
     company = params[:demo][:company]
 
-    UserMailer.demo_request(email, name, company).deliver_later
+    UserMailer.demo_request(email, name, company).deliver_now
 
     redirect_to "/", notice: "We're going to contact you soon"
   end
