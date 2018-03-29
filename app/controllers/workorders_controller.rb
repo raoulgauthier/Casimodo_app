@@ -39,7 +39,9 @@ class WorkordersController < ApplicationController
     @workorder = Workorder.new(workorder_params)
 
     if @workorder.save
+      UserMailer.workorder_alert(@workorder).deliver_now
       redirect_to @workorder, notice: 'Workorder was successfully created.'
+
     else
       render :new
     end

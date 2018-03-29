@@ -30,7 +30,7 @@ users = User.create([
 { email: 'Ted.Beneke@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Asac.Merkert@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
 { email: 'Tyrus.Kitt@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' },
-{ email: 'Jane.Margolis@gmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' }
+{ email: 'rarajr@hotmail.com', password: '123456', phone: '33 1 23 45 67 89', user_type: 'technician' }
 ])
 workorders = Workorder.create([
 
