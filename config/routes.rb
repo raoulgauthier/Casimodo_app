@@ -17,11 +17,15 @@ Rails.application.routes.draw do
       post 'start'
       post 'stop'
       post 'report'
+      post 'new_photo'
     end
   end
 
+  resources :demos, only: [:create]
+
+
 devise_for :users
-  root to: 'landing_page#index'
+  root to: 'demos#new'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
