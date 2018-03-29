@@ -33,7 +33,7 @@ class InterventionsController < ApplicationController
     if !@workorder.report || @workorder.report.blank?
       redirect_to intervention_path(@workorder), :flash => { :alert => "Please fill in the report!" }
     else
-      @workorder.status = "Done"
+      @workorder.status = "Closed"
       @workorder.date_done = DateTime.now
       @workorder.save
       redirect_to interventions_path
