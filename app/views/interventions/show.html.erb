@@ -34,7 +34,7 @@
               </small>
             </div>
 
-            <% if @workorder.status == "Done" %>
+            <% if @workorder.status == "Closed" %>
             <div class="card-item-body mr-auto card-item-bottom-spacing">
               <div class="leading-normal">Due date</div>
               <small>
@@ -43,7 +43,7 @@
             </div>
             <% end %>
 
-            <% if @workorder.status == "Done" %>
+            <% if @workorder.status == "Closed" %>
             <div class="card-item-body mr-auto card-item-bottom-spacing">
               <div class="leading-normal">Report</div>
               <small>
