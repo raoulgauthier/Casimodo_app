@@ -17,13 +17,20 @@
               <div class="container">
                 <div class="row">
                   <div class="col">
-                    <i class="ti-angle-left ">  </i>
+
+                    <!-- <i class="ti-angle-left "> <%= link_to interventions_path, date: @date_int - 1 %> </i> -->
+                    <%= link_to interventions_path(date: @date_int - 1) do %>
+                      <i class="ti-angle-left "></i>
+                    <% end %>
+
                   </div>
                   <div class="col-6">
                     <%= @date %>
                   </div>
                   <div class="col">
-                    <i class="ti ti-angle-right "></i>
+                    <%= link_to interventions_path(date: @date_int + 1) do %>
+                  <i class="ti ti-angle-right "></i>
+                  <% end %>
                   </div>
                 </div>
               </div>
