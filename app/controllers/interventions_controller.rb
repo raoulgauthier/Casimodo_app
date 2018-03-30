@@ -63,7 +63,7 @@ end
 private
 
 def photo_params
-  params.require(:photo).permit(:photo)
+  params.require(:photo).permit(:photo, :legend)
 end
 
 def set_workorder
