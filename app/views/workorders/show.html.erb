@@ -12,95 +12,104 @@
           <div class="form-horizontal">
             <div class="container">
 
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Address</label>
-              <div class="col-12 col-md-10">
-                <span class="form-control uneditable-input">
-                  <%= @workorder.address %>
-                </span>
+              <div class="form-group row">
+                <label class="col-md-2 form-label">Address</label>
+                <div class="col-12 col-md-10">
+                  <span class="form-control uneditable-input">
+                    <%= @workorder.address %>
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Description</label>
-              <div class="col-12 col-md-10">
-              <span class="form-control uneditable-input">
-                 <%= @workorder.description %>
-              </span>
-              </div>
-            </div>
+              <div class="form-group row">
+                <label class="col-md-2 form-label">Description</label>
+                <div class="col-12 col-md-10">
+                  <span class="form-control uneditable-input">
+                   <%= @workorder.description %>
+                 </span>
+               </div>
+             </div>
 
-            <div class="form-group row">
+             <div class="form-group row">
               <label class="col-md-2 form-label">Due date</label>
               <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                 <%= @workorder.date_planned %>
-              </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Date done</label>
-              <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                  <%= @workorder.date_done %>
-              </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Report</label>
-              <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                  <%= @workorder.report %>
-              </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Status</label>
-              <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                  <%= @workorder.status %>
-              </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Manager</label>
-              <div class="col-12 col-md-10">
-              <div class="form-control uneditable-input">
-                  <%= @workorder.manager.email %>
-              </div>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-md-2 form-label">Technician</label>
-              <div class="col-12 col-md-10">
-              <% if @workorder.technician %>
                 <div class="form-control uneditable-input">
-                    <%= @workorder.technician.email %>
-                </div>
+                 <%= @workorder.date_planned %>
+               </div>
+             </div>
+           </div>
+
+           <div class="form-group row">
+            <label class="col-md-2 form-label">Date done</label>
+            <div class="col-12 col-md-10">
+              <div class="form-control uneditable-input">
+                <%= @workorder.date_done %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 form-label">Report</label>
+            <div class="col-12 col-md-10">
+              <div class="form-control uneditable-input">
+                <%= @workorder.report %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 form-label">Status</label>
+            <div class="col-12 col-md-10">
+              <div class="form-control uneditable-input">
+                <%= @workorder.status %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 form-label">Manager</label>
+            <div class="col-12 col-md-10">
+              <div class="form-control uneditable-input">
+                <%= @workorder.manager.email %>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label class="col-md-2 form-label">Technician</label>
+            <div class="col-12 col-md-10">
+              <% if @workorder.technician %>
+              <div class="form-control uneditable-input">
+                <%= @workorder.technician.email %>
+              </div>
               <% else %>
-                 <div class="form-control uneditable-input">
-                  &nbsp;
-                 </div>
+              <div class="form-control uneditable-input">
+                &nbsp;
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+            <div class="photosflexbox">
+              <% @workorder.photos.each do |p|  %>
+              <div class="card-item-bottom-spacing">
+                <%= cl_image_tag(p.photo, :width=>150, :height=>150, :crop=>"fill") %>
+                <p><%= p.legend %></p>
+              </div>
               <% end %>
               </div>
-            </div>
-
-            <div class="d-flex">
-              <div class="ml-auto">
-                <%= link_to fa_icon_tag("pencil") + ' Edit', edit_workorder_path(@workorder), class: 'btn btn-primary' %>
-                <%= link_to 'Back', workorders_path, class: 'btn' %>
-              </div>
-            </div>
+          <div class="d-flex">
+            <div class="ml-auto">
+              <%= link_to fa_icon_tag("pencil") + ' Edit', edit_workorder_path(@workorder), class: 'btn btn-primary' %>
+              <%= link_to 'Back', workorders_path, class: 'btn' %>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+</div>
+
+</div>
 </div>
