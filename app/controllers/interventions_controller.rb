@@ -7,7 +7,13 @@ class InterventionsController < ApplicationController
   before_action :hide_nav
 
   def index
-    @date = Date.today
+    if params[:date].nil?
+      @date = Date.today
+      @date_int = 0
+    else
+       @date = Date.today + params[:date].to_i
+       @date_int = params[:date].to_i
+    end
     @workorders = current_user.workorders.where(date_planned: @date.all_day)
   end
 
@@ -57,7 +63,7 @@ end
 private
 
 def photo_params
-  params.require(:photo).permit(:photo)
+  params.require(:photo).permit(:photo, :legend)
 end
 
 def set_workorder
