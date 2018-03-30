@@ -1,5 +1,5 @@
 class WorkordersController < ApplicationController
-  layout "scaffold"
+  layout "application"
   before_action :authenticate_user!
   before_action :set_workorder, only: [:show, :edit, :update, :destroy]
 
