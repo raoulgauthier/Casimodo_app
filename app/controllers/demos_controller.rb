@@ -1,8 +1,13 @@
 class DemosController < ApplicationController
 before_action :hide_nav
+before_action :hide_alert
 
   def hide_nav
     @hide_nav = true
+  end
+
+  def hide_alert
+    @hide_alert = true
   end
 
   def new

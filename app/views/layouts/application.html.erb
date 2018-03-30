@@ -2,12 +2,10 @@
 <%= render layout: "layouts/base" do %>
 <% unless @hide_nav %>
 <%= render partial: "layouts/side_menu" %>
-
-
 <%= render partial: 'layouts/dashboard_top_nav' %>
+<%end%>
 
-<div class="main-content">
-  <%end%>
+
   <% if content_for?(:description) || content_for(:actions) %>
   <div class="scaffold page-header d-flex align-items-center mb-3">
     <div class='container'>
@@ -27,13 +25,17 @@
   </div><!-- /.page-header -->
   <% end %>
 
+<div class="main-content">
+
+<% unless @hide_alert %>
   <div class='container'>
     <div class='row'>
-      <div class="col-12">
+      <div class="col-3 col-offset-9" id="flash_message">
         <%= render "layouts/flashes" %>
       </div>
     </div>
   </div>
+<% end %>
 
   <%= yield %>
   <% end %>
