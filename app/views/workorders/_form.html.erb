@@ -59,10 +59,11 @@
     <%= f.form_group :status, class: 'row' do |f| %>
       <%= f.label :Manager, class: 'control-label col-md-2' %>
       <div class='col-12 col-md-10 input-group'>
+<!-- ci-dessous utilisation de js-example-basic-single qui permet l'autocomplete (code dans la view edit) -->
         <%if params[:id] %>
-          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: @workorder.manager.email}, {class: "form-control"}  %>
+          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: @workorder.manager.email}, {class: "form-control js-example-basic-single"}  %>
         <% else %>
-          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: 'select a manager'}, {class: "form-control"}  %>
+          <%= f.select :manager_id, User.where(user_type: 'manager').order(:email).collect{|u| [u.email, u.id] }, {prompt: 'select a manager'}, {class: "form-control js-example-basic-single"}  %>
         <% end %>
         <%= f.error_messages %>
       </div>
@@ -90,4 +91,5 @@
   </div>
 
 <% end %>
+
 

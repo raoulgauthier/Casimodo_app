@@ -12,6 +12,7 @@
  *
 
  *= require bootstrap-datetimepicker.min
+ *= require select2
  *= require_tree .
  *= require_self
  */
@@ -60,6 +61,14 @@ small {
 small-13 {
   font-size: 13px;
 }
+
+
+.select2 {
+  margin-left: 5px;
+}
+
+.select2-selection__rendered {
+  color: green !important;
 
 
 #flash_message {

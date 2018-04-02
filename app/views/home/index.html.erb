@@ -2,7 +2,6 @@
 
 <div class="container">
 
-
   <div class="row">
      <div class="card card-tile-hero col-sm text-center" >
     <h4 id="welcome"> Welcome <%= current_user.email %> </h4>
@@ -17,7 +16,8 @@
       </div>
       <div class="card-body text-center">
         <small>OPEN</small>
-        <h3 class="m-0 leading-normal">254</h3>
+        <% o = Workorder.where({status: "Open"}) %>
+        <h3 class="m-0 leading-normal"><%= o.count %></h3>
       </div>
     </div>
 
@@ -27,7 +27,8 @@
       </div>
       <div class="card-body text-center">
         <small>SCHEDULED</small>
-        <h3 class="m-0 leading-normal">597</h3>
+        <% s = Workorder.where({status: "Scheduled"}) %>
+        <h3 class="m-0 leading-normal"><%= s.count %></h3>
       </div>
     </div>
 
@@ -38,7 +39,8 @@
 
       <div class="card-body text-center">
         <small>IN PROGRESS</small>
-        <h3 class="m-0 leading-normal">54</h3>
+        <% i = Workorder.where({status: "In progress"}) %>
+        <h3 class="m-0 leading-normal"><%= i.count %></h3>
       </div>
     </div>
 
@@ -48,14 +50,64 @@
       </div>
       <div class="card-body text-center">
         <small>DONE</small>
-        <h3 class="m-0 leading-normal">1,358</h3>
+        <% c = Workorder.where({status: "Closed"}) %>
+        <h3 class="m-0 leading-normal"><%= c.count %></h3>
       </div>
-
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="card card-metric card-full-bleed inspectable">
+        <!-- component-title: Metric Graph -->
+        <div class="card-body">
+          <canvas class='metric-graph metric-random-graph'></canvas>
+          <div class="metric-header">
+            <h6>Intervention delay for the week</h6>
+            <div class="metric-value">2H35</div>
+          </div>
+          <div class="metric-details">
+            <span>
+              <i class="fa fa-chevron-up text-success"></i>
+              12% SINCE 30 Days Ago
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="card card-full-bleed card-metric inspectable">
+        <!-- component-title: Metric Graph -->
+        <div class="card-body">
+          <canvas class='metric-graph metric-random-graph'></canvas>
+          <div class="metric-header">
+            <h6>Resolution delay for the week</h6>
+            <div class="metric-value">4H15</div>
+          </div>
+          <div class="metric-details">
+            <span>
+              <i class="fa fa-chevron-down text-danger"></i>
+              22% SINCE 30 Days Ago
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+     <div class="card card-tile-hero col-sm text-center" >
+        <h4 id="welcome"> TEAM ON THE FIELD TODAY </h4>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+        ></div>
+    </div>
+      <!-- data-markers="<%= @provider_geo.to_json %>" -->
+  </div>
+
 </div>
 
-<div class="row">
-  <%= render 'map' %>
-</div>
 

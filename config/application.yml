@@ -1,4 +1,7 @@
 
+GOOGLE_API_SERVER_KEY: "AIzaSyAr5Fke5qYC-F79-kSYWD1jdqm-mzYvPN8"
+GOOGLE_API_BROWSER_KEY: "AIzaSyB3nFJh-lV7o_PtxifCaNTCNYhPbbAtrfU"
+
 # Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
@@ -12,3 +15,4 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 CLOUDINARY_URL: cloudinary://576396682131583:tLkMq_0-63DBtJ8nYZeqBYYOkNQ@dks2vnvtk
+
