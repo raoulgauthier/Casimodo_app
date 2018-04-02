@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<%= html_tag :lang => "en" do %>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
-    you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
-    <meta name="turbolinks-cache-control" content="no-cache">
-    <title><%= [@title, app_name].compact.join(" - ") %></title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'%>
-    <%= yield :styles %>
-    <%= favicon_link_tag %>
-    <%# favicon_link_tag "apple-touch-icon.png", :rel => "apple-touch-icon" %>
-    <%= render 'layouts/external_js_libs' %>
-    <%= yield :external_js_libs %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
-    <%= yield :javascript %>
-    <%= yield :head %>
-</head>
-<body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
+
     <div class="card">
       <div class="card-body img-fluid"  id="padding_zero">
         <header class="landing-header-1" style="background-image: linear-gradient(-225deg, rgba(0,101,110,0.4) 0%, rgba(0,36,61,0.4) 50%), url(https://images.unsplash.com/photo-1485848018738-1705045b4a57?ixlib=rb-0.3.5&s=d0faf6ff0770cc0bf8858ee65a213467&auto=format&fit=crop&w=3449&q=80)">
@@ -63,16 +42,35 @@
                 </div>
               </div>
             </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <% if notice %>
+                <div class="alert alert-light alert-rounded" id="flash_message">
+                  <a class="close" data-dismiss="alert">&times;</a>
+                  <%= fa_icon_tag "info-sign" %><%= notice %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
             <div class="container header-caption">
+
+
               <div class="row">
                 <div class="col-12 col-md-10 px-5">
                   <div class="text-white">
+
+
+
                     <h1 class="mt-5 font-weight-bold ">INCREASE YOUR PRODUCTIVITY AND QUALITY OF SERVICE</h1>
                     <h4 class="">Choose a user-friendly CMMS for Facility and Asset Management</h4>
                     <br><br>
                   </div>
                   <a class="btn btn-primary text-white" data-toggle="modal" data-target="#Demo">Request a demo</a>
                   <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
+
                 </div>
               </div>
             </div>
@@ -253,41 +251,10 @@
           <div class="modal-body" id="demo_form">
 
             <%= render "form" %>
-            <!-- <form>
 
-              <div class="form-group row">
-                <label for="name" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                  <input type="string" class="form-control" name="name" id="name" placeholder="Your name">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="company" class="col-sm-2 col-form-label">Firm </label>
-                <div class="col-sm-10">
-                  <input type="string" class="form-control" name="company" id="company" placeholder="Company name">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                </div>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                data-dismiss="modal">Close</button>
-
-                <button type="button" class="btn btn-primary">Send the request</button>
-              </div>
-
-            </form> -->
           </div>
         </div>
       </div>
     </div>
 
-  </body>
-<% end %>
+

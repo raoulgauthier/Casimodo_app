@@ -1,5 +1,4 @@
 <% @title = "Work Orders" %>
-
 <% content_for :description do %>
 <h4>Work Orders Management Center </h4>
 <% end %>
@@ -15,7 +14,6 @@
 <%= fa_icon_tag "th-list" %> All the list
 <% end %>&nbsp;
 <% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-12">
@@ -88,9 +86,9 @@
 
             </small-13></td>
 
-              <td><%= workorder.manager.email %><br>
+              <td><%= workorder.manager.name %><br>
               <% if !workorder.technician.nil? %>
-                <strong><%= workorder.technician.email %></strong></td>
+                <strong><%= workorder.technician.name %></strong></td>
               <% end %>
 
               <td class="actions text-right">

@@ -16,7 +16,7 @@
  *= require_tree .
  *= require_self
  */
-.card-item-bottom-spacing {
+ .card-item-bottom-spacing {
   margin-bottom: 12px;
 }
 .chronology-bottom-spacing {
@@ -41,7 +41,7 @@
   padding-top: 0px;
 }
 
-#report {
+.textareamargin {
   margin-left: 0px;
 }
 
@@ -53,9 +53,15 @@ small {
   font-size: 15px;
 }
 
+.photo-button {
+  width: 100%;
+  height: 40px;
+}
+
 small-13 {
   font-size: 13px;
 }
+
 
 .select2 {
   margin-left: 5px;
@@ -63,4 +69,24 @@ small-13 {
 
 .select2-selection__rendered {
   color: green !important;
+
+
+#flash_message {
+  background-color: rgba(230, 230, 230, 0.6);
+  text-align: center;
+  color: white;
+  }
+
+#photo_legend {
+  height: 3em;
+}
+
+.photosflexbox {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#raoulButton {
+  margin-right: 10px;
 }
