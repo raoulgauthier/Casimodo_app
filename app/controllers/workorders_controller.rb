@@ -16,7 +16,7 @@ class WorkordersController < ApplicationController
       if params[:due_date_selector] == @due_date_selector[1]
         @date_planned = params[:date_planned].blank? ? "" : query[:date_planned] = DateTime.parse(params[:date_planned]["{}(1i)"] +"-"+ params[:date_planned]["{}(2i)"] +"-"+ params[:date_planned]["{}(3i)"]).all_day
       end
-      p query[:date_planned]
+      # p query[:date_planned]
       @workorders = Workorder.where(query)
     end
   end

@@ -13,7 +13,7 @@ gem "letter_opener", group: :development
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'figaro'
-
+gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
@@ -27,6 +27,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem "select2-rails"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -43,6 +44,7 @@ gem 'simple_form'
 
 gem 'devise','~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
+gem 'webpacker', '~> 3.4'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true

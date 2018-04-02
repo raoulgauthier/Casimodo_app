@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
   get 'users/create'
 
   get 'users/new'
@@ -14,6 +11,15 @@ Rails.application.routes.draw do
   get 'users/destroy'
 
   get 'users/update'
+
+  get 'dashboard/showE'
+
+  get 'faqs/show'
+
+  get 'prices/index'
+
+  get 'prices/show'
+
 
   authenticated :user do
     root 'home#index'

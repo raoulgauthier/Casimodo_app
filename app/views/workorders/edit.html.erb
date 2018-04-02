@@ -18,3 +18,17 @@
 
   </div>
 </div>
+
+<!--
+code de js-example-basic-single qui permet l'autocomplete (code dans la view edit)
+le select provient d'ue GEM construite à partir de https://select2.org
+-->
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+  });
+  </script>
+<% end %>
+
