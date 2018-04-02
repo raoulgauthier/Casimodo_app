@@ -79,6 +79,7 @@
               </div>
 
               <% end %>
+                  <%= cl_image_tag(@workorder.signature) %>
 
               <% if @workorder.status == "In progress" %>
               <%= simple_form_for(@new_photo, as: :photo, method: :post, url: new_photo_intervention_path(@workorder)) do |f| %>
@@ -89,7 +90,9 @@
                 <!-- , input_html: { style: 'display: none;'} -->
                 <!-- </div> -->
                 <%= f.input :photo_cache, as: :hidden %>
-                <%= f.submit "Submit", class: "btn btn-primary btn-block"%>
+
+
+                <%= f.submit "Upload", class: "btn btn-primary btn-block"%>
                 <% end %>
 
                 <%= form_tag(stop_intervention_path(@workorder)) do %>
@@ -101,7 +104,7 @@
                </div>
                <div class="row">
                 <div class="col-12">
-                  <%= submit_tag "Stop", class: "btn btn-primary btn-block"%>
+                  <%= submit_tag "Sign", class: "btn btn-primary btn-block"%>
                 </div>
               </div>
               <% end %>
