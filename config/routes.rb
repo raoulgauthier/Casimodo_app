@@ -35,12 +35,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :interventions, only: [:show, :index] do
+  resources :interventions, only: [:show, :index, :signature] do
     member do
       post 'start'
       post 'stop'
       post 'report'
       post 'new_photo'
+      get 'signature'
+      post 'signature_process'
     end
   end
 
