@@ -2,8 +2,25 @@ Rails.application.routes.draw do
 
 
 
+
+  get 'users/create'
+
+  get 'users/new'
+
+  get 'users/index'
+
+  get 'users/edit'
+
+  get 'users/destroy'
+
+  get 'users/update'
+
   authenticated :user do
     root 'home#index'
+  end
+
+  resources :user do
+    get 'user_status'
   end
 
   resources :workorders do
@@ -24,12 +41,16 @@ Rails.application.routes.draw do
   resources :demos, only: [:create]
 
 
-devise_for :users
+devise_for :users, :controllers => { :invitations => 'devise/invitations' }
   root to: 'demos#new'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
+
 
 # root :to => "pages#home", :constraints => lambda { |request|!request.env['warden'].user}
 # root :to => 'customer/dashboard#index', :constraints => lambda { |request| request.env['warden'].user.type == 'customer' }
