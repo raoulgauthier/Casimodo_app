@@ -1,0 +1,51 @@
+<% @title = "Technician" %>
+<% content_for :description do %>
+<h4> Workers management center </h4>
+<% end %>
+
+<% content_for :actions do %>
+  <div class="col-md-12">
+          <%= simple_form_for(User.invite!, url:  user_invitation_path, html: { id:"form_new_user"}) do |f|%>
+          <%= f.input :email, placeholder:"Email", label:false, html: { id: "text_font_form_1"}%>
+          <%= f.input :name, placeholder:"Name", label:false, html: { id: "text_font_form_2"} %>
+          <%= f.button :submit, "Invite a technician", class: "btn btn-primary my-2 submit_button" %>
+          <% end %>
+  </div>
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10 ">
+  <h2> Authorized Users </h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td> <%= user.name %> </td>
+              <td> <%= user.email %> </td>
+              <td> <%= (user.user_type =="technician") ? (content_tag(:i , "", class: "fa  fa-check")) : "NOPE" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
