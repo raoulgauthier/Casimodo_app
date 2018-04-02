@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329092213) do
+ActiveRecord::Schema.define(version: 20180330084426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,14 +69,18 @@ ActiveRecord::Schema.define(version: 20180329092213) do
     t.datetime "date_done"
     t.text "report"
     t.string "status"
-    t.integer "manager_id"
-    t.integer "technician_id"
+    t.bigint "manager_id"
+    t.bigint "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_started"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["manager_id"], name: "index_workorders_on_manager_id"
     t.index ["technician_id"], name: "index_workorders_on_technician_id"
   end
 
   add_foreign_key "photos", "workorders"
+  add_foreign_key "workorders", "users", column: "manager_id"
+  add_foreign_key "workorders", "users", column: "technician_id"
 end

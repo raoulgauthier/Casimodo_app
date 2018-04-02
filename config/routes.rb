@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
 
 
+  get 'dashboard/showE'
+
+  get 'faqs/show'
+
+  get 'prices/index'
+
+  get 'prices/show'
+
   authenticated :user do
     root 'home#index'
   end

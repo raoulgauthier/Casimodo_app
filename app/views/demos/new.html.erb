@@ -18,8 +18,8 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
     <%= yield :javascript %>
     <%= yield :head %>
-  </head>
-  <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
+</head>
+<body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
     <div class="card">
       <div class="card-body img-fluid"  id="padding_zero">
         <header class="landing-header-1" style="background-image: linear-gradient(-225deg, rgba(0,101,110,0.4) 0%, rgba(0,36,61,0.4) 50%), url(https://images.unsplash.com/photo-1485848018738-1705045b4a57?ixlib=rb-0.3.5&s=d0faf6ff0770cc0bf8858ee65a213467&auto=format&fit=crop&w=3449&q=80)">
@@ -28,7 +28,7 @@
               <div class="col-12">
                 <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
                   <a href="javascript:" class="navbar-brand d-lg-none">
-                    <p>Yuman</p>
+                    <h4>Yuman</h4>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#standardLandingNavbarWithCenteredBrand" aria-controls="standardLandingNavbarWithCenteredBrand"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -142,6 +142,101 @@
         </div>
       </div>
     </div>
+
+<br><br>
+
+<section class="bg-dark p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-white text-center">
+        <h1>Avantages and Benefits</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-12 col-md-6">
+      <h6>Reduce paperwork</h6>
+      <p>Technicians spend a lot of time dealing with paperwork— writing up reports, finding missing work requests, and searching for old records, service warranties, and schematics. Over time, these activities can seriously chip away at the time they actually spend working.</p>
+      <p>Yuman keeps all this information in a single, searchable database, which makes finding it much easier. By decreasing the time your team spends on paperwork, you increase the time spent maintaining assets.</p>
+    </div>
+    <div class="col-12 col-md-6">
+      <h6>Track work in real-time</h6>
+      <p>Yuman lets you see all your operation and maintenance information in one spot. As a team leader, you can immediately see what work is overdue and what’s in progress, which makes it easy to follow up on work that’s taking too long. With Yuman it's always clear who is responsible for what work.</p>
+      <p>It’s the right time to incorporate process automation in your enterprise with our mobile app to improve your operations and efficiency.</p>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12 col-md-6">
+      <h6>Spend less time logging work</h6>
+      <p>Data entry should not be a full-time job for your technicians. They should be spending more time in the field than in the office. After all, that’s where the work is.</p>
+      <p>
+      It doesn’t make sense for technicians to run back to a computer terminal to log their work. Instead, our mobile app will give them a powerful CMMS that they can carry around in their pocket, allowing them to log work in the field in real-time.</p>
+    </div>
+    <div class="col-12 col-md-6">
+      <h6>Mobile access, anytime, anywhere</h6>
+      <p>No matter where you are, our mobile first software gives you complete access to all the tools you need from your favourite device. Take a picture of the damage, and create a work order while you’re on location. Once you’ve finished the repair, use your mobile device to snap a picture of the completed job, attach it to the work order, and close it out on the spot.</p>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12 col-md-6">
+      <h6>Easy to use</h6>
+      <p>Established Field Service Management Software companies continue to make products that are very difficult to use. Their interface hasn’t changed since years and many complicated and unnecessary features have been added to the product. Our application perfectly designed and focused on essentiel features transform the User eXperience and ensure a rapid appropriation. Futhermore, with this no-frills approach we garantee performance, efficency and last but not least, very good prices.</p>
+    </div>
+
+  </div><div class="row">
+    <div class="col-12 col-md-6">
+      <h6>Cloud-based</h6>
+      <p>With our dedicated cloud platform we take care of all our customers' IT, security, and backups, making this the ultimate option for modern maintenance teams. Flexibilty, disaster recovery, automatic software updates, capital-expenditure free, increasing collaboration, allowing work from anywhere, enforcing security, environmentally friendly, and so forth. MOVE TO OUR CLOUD TODAY!</p>
+    </div>
+
+  </div>
+</div>
+<section class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+          <%= render partial: "content_blocks/general/33" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <% @title = "Pricing" %>
+
+  <%= content_for :js_libs, "modernizr" %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+          <%= render partial: "content_blocks/general/38" %>
+      </div>
+    </div>
+  </div>
+  <section class="mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h4 class="text-center text-muted">Used and loved by some of the world's greatest companies</h4>
+            <%= render partial: "content_blocks/general/39" %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <%= render partial: "content_blocks/general/32" %>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
     <%= render 'footer' %>
     <!-- Modal class "try to have a demo request" -->
