@@ -75,11 +75,11 @@
                   </div>
 
                   <% end %>
-                  <%= cl_image_tag(@workorder.signature) %>
                 </div>
               </div>
 
               <% end %>
+                  <%= cl_image_tag(@workorder.signature) %>
 
               <% if @workorder.status == "In progress" %>
               <%= simple_form_for(@new_photo, as: :photo, method: :post, url: new_photo_intervention_path(@workorder)) do |f| %>
