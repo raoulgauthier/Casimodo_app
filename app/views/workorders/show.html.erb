@@ -98,7 +98,9 @@
                 <p><%= p.legend %></p>
               </div>
               <% end %>
+              <%= cl_image_tag(@workorder.signature) %>
               </div>
+
           <div class="d-flex">
             <div class="ml-auto">
               <%= link_to fa_icon_tag("pencil") + ' Edit', edit_workorder_path(@workorder), class: 'btn btn-primary' %>

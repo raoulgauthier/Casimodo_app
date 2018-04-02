@@ -1,5 +1,7 @@
 {
   "name": "yuman",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "signature_pad": "^2.3.2"
+  }
 }

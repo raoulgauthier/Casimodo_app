@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330101532) do
+ActiveRecord::Schema.define(version: 20180402103457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180330101532) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
@@ -70,14 +71,17 @@ ActiveRecord::Schema.define(version: 20180330101532) do
     t.datetime "date_done"
     t.text "report"
     t.string "status"
-    t.integer "manager_id"
-    t.integer "technician_id"
+    t.bigint "manager_id"
+    t.bigint "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_started"
+    t.string "signature"
     t.index ["manager_id"], name: "index_workorders_on_manager_id"
     t.index ["technician_id"], name: "index_workorders_on_technician_id"
   end
 
   add_foreign_key "photos", "workorders"
+  add_foreign_key "workorders", "users", column: "manager_id"
+  add_foreign_key "workorders", "users", column: "technician_id"
 end
