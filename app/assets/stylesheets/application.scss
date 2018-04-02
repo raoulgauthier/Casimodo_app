@@ -12,9 +12,30 @@
  *
 
  *= require bootstrap-datetimepicker.min
+ *= require select2
  *= require_tree .
  *= require_self
  */
+
+#text_font_form_1 {
+  font-size: 12px;
+}
+
+#text_font_form_2 {
+  font-size: 12px;
+}
+
+.submit_button {
+  margin-left: 185px;
+  font-size: 12px;
+}
+
+
+ #form_new_user {
+  padding-top: 30px;
+  font-size: 12px;
+ }
+
  .card-item-bottom-spacing {
   margin-bottom: 12px;
 }
@@ -62,6 +83,16 @@ small-13 {
 }
 
 
+.select2 {
+  margin-left: 5px;
+}
+
+.select2-selection__rendered {
+  color: green !important;
+  }
+
+
+
 #flash_message {
   background-color: rgba(230, 230, 230, 0.6);
   text-align: center;
@@ -80,4 +111,9 @@ small-13 {
 
 .signature-pad {
   background-color: white;
+}
+
+
+#raoulButton {
+  margin-right: 10px;
 }

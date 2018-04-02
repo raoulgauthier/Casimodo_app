@@ -1,13 +1,23 @@
-<nav class="nav-side-menu   navbar-expand-lg">
+<nav class="nav-side-menu   navbar-expand-lg" id='FelixNav'>
   <%= render partial: 'layouts/side_menu_header' %>
 
   <div id="menu-content" class="navbar-collapse collapse">
     <div class="nav-side-container">
+
+      <div class="container">
+        <div class="row">
+
+
+      <button class=" col align-self-center btn btn-sm btn-default my-2" id='raoulButton' > close </button>
+    </div>
+
+  </div>
+
       <ul class="navbar-nav flex-column">
         <%= render partial: 'layouts/side_menu_main_content' %>
 
         <li class="nav-item">
-          <a class="nav-link" href="#" aria-expanded="false">
+          <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false">
             <%= theme_icon_tag "layout-menu-v" %>
             <span>Workorders</span>
             <span class="fa arrow"></span>
@@ -31,7 +41,7 @@
           </a>
           <ul class="nav-item nav-second-level collapse" aria-expanded="false">
             <li class="nav-item">
-              <a href="#" class="nav-link">List</a>
+              <a href="../users/index" class="nav-link">List</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Create</a>
@@ -82,6 +92,17 @@
           <!-- /.nav-second-level -->
 
       </ul>
+
     </div>
   </div>
 </nav>
+
+
+<script>
+  document.getElementById("raoulButton").addEventListener('click', function(e) {
+      console.log(e.currentTarget);
+       document.body.classList.remove('show-sidebar');
+  })
+
+
+</script>

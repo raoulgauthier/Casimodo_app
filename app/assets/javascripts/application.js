@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require rails-ujs
+//= require select2-full
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers

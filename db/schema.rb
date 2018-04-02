@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20180402103457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_started"
+    t.float "latitude"
+    t.float "longitude"
     t.string "signature"
     t.index ["manager_id"], name: "index_workorders_on_manager_id"
     t.index ["technician_id"], name: "index_workorders_on_technician_id"

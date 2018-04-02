@@ -73,7 +73,7 @@
               <% end %>
               <% if workorder.date_started %>
                 <div class="chronology-bottom-spacing">
-                <span style="font-size: 12px;"><i class="fa fa-timer justify-content-center"></i></span>
+                <span style="font-size: 12px;"><i class="fa fa-refresh justify-content-center"></i></span>
                 <%= workorder.date_started.strftime("%m/%d/%Y at %I:%M%p") %>
                 </div>
               <% end %>
@@ -86,9 +86,9 @@
 
             </small-13></td>
 
-              <td><%= workorder.manager.email %><br>
+              <td><%= workorder.manager.name %><br>
               <% if !workorder.technician.nil? %>
-                <strong><%= workorder.technician.email %></strong></td>
+                <strong><%= workorder.technician.name %></strong></td>
               <% end %>
 
               <td class="actions text-right">
