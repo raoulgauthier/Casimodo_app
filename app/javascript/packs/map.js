@@ -16,12 +16,14 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
-
-  // map.drawCircle({
-  //   lat: markers[0].lat,
-  //   lng: markers[0].lng,
-  //   radius: markers[0].range * 1000
-  // });
+ map.drawRoute({
+  origin: [markers[0].lat,markers[0].lng],
+  destination: [markers[1].lat,markers[1].lng],
+  travelMode: 'driving',
+  strokeColor: '#131540',
+  strokeOpacity: 0.6,
+  strokeWeight: 6
+});
 
 }
 
