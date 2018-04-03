@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :no_proletarians
 
   def index
     if params[:technician].nil? && params[:status].nil?
@@ -35,6 +36,14 @@ class HomeController < ApplicationController
       }
     end
   end
+
+  private
+
+  def no_proletarians
+      if current_user && current_user.user_type == "technician"
+          redirect_to interventions_path
+      end
+    end
 
 end
 

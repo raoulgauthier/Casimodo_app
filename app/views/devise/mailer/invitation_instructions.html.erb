@@ -6,10 +6,11 @@
   <% end %>
 
   <%= email_message_button do %>
-    <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token), style: 'color: #1F3F5F;' %>
+    <%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token, :user_type => 'technician'), style: 'color: #1F3F5F;' %>
   <% end %>
 
-
+ <%= @resource.name %>
+ <%= @resource.user_type %>
   <%= email_message_spacer 2 %>
 
   <%= email_message_small_text do %>
