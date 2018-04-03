@@ -30,7 +30,6 @@
   <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
     <%= yield %>
 
-    <%= javascript_include_tag "application" %>
 
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
