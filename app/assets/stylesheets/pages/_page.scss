@@ -35,9 +35,7 @@
   text-decoration: none;
 }
 
-.badge-warning {
-  background-color: #ffc107;
-}
+
 
 #demo_form {
   padding-top: 0px;
@@ -100,7 +98,12 @@ small-13 {
   margin-right: 10px;
 }
 
+
 .navbar-brand.navbar-center.text-center.d-none.d-sm-none.d-md-none.d-lg-block.font-weight-bold {
   font-size: 35px;
+}
+
+.badge-warning {
+  background-color: #ffc107;
 }
 

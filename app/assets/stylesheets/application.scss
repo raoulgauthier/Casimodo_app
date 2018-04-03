@@ -13,6 +13,8 @@
 
  *= require bootstrap-datetimepicker.min
  *= require select2
- *= require_tree .
- *= require_self
+ *= require rrt
  */
+
+ @import "pages/index";
+
