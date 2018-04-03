@@ -8,6 +8,7 @@
           <%= simple_form_for(User.invite!, url:  user_invitation_path, html: { id:"form_new_user"}) do |f|%>
           <%= f.input :email, placeholder:"Email", label:false, html: { id: "text_font_form_1"}%>
           <%= f.input :name, placeholder:"Name", label:false, html: { id: "text_font_form_2"} %>
+          <%= f.input :user_type, :as => :hidden, :input_html => { value: "technician" }%>
           <%= f.button :submit, "Invite a technician", class: "btn btn-primary my-2 submit_button" %>
           <% end %>
   </div>
@@ -30,12 +31,19 @@
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
+          <% @users.order('name').each do |user| %>
+
             <tr>
-              <td> <%= user.name %> </td>
-              <td> <%= user.email %> </td>
-              <td> <%= (user.user_type =="technician") ? (content_tag(:i , "", class: "fa  fa-check")) : "NOPE" %></td>
+              <td>
+                <a href="../workorders?utf8=✓&manager%5Bid%5D=&technician%5Bid%5D=<%= user.id%>&status=&due_date_selector=Do+not+filter+on+due+date&commit=Apply+the+filter" class="no_decoration"><%= user.name %></a>
+              </td>
+              <td>
+              <a href="../workorders?utf8=✓&manager%5Bid%5D=&technician%5Bid%5D=<%= user.id%>&status=&due_date_selector=Do+not+filter+on+due+date&commit=Apply+the+filter" class="no_decoration"> <%= user.email %> </a>
+              </td>
+              <td> <%= ((user.invitation_accepted_at == nil) && (user.invitation_created_at != nil))? "pending" : content_tag(:i , "", class: "fa fa-check") %></td>
             </tr>
+
+
           <% end %>
         </tbody>
       </table>

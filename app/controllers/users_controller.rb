@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+before_action :configure_permitted_parameters, if: :devise_controller?
+before_action :update_resource_params, if: :devise_controller?
+
   def create
     @user = User.new(user.params)
     if @user.save
@@ -25,9 +28,6 @@ class UsersController < ApplicationController
   def update
   end
 
-  def invite
-    User.invite!(email: params[:email], name: params[:name])
-  end
 
   def user_status(user)
     if user.user_type =="technician"
@@ -37,6 +37,20 @@ class UsersController < ApplicationController
     end
   end
 
+ protected
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :user_type])
+  end
+private
+
+  def update_resource_params
+    params.require(:user).permit(:email, :name, :user_type)
+  end
+
+  def configure_permitted_parameters_invitation
+
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:email, :name, :user_type])
+  end
 
 end

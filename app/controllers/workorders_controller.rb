@@ -2,7 +2,7 @@ class WorkordersController < ApplicationController
   layout "application"
   before_action :authenticate_user!
   before_action :set_workorder, only: [:show, :edit, :update, :destroy]
-
+  before_action :no_proletarians
   # GET /workorders
   def index
     status_due_date
@@ -62,7 +62,11 @@ class WorkordersController < ApplicationController
   end
 
   private
-
+    def no_proletarians
+      if current_user && current_user.user_type == "technician"
+          redirect_to interventions_path
+      end
+    end
     def status_due_date
       @due_date_selector = ["Do not filter on due date", "Filter on due date"]
     end

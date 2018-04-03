@@ -16,6 +16,14 @@
  *= require_tree .
  *= require_self
  */
+.no_decoration {
+  color: black;
+  text-decoration: none;
+}
+
+.no_decoration:hover{
+text-decoration: none;
+}
 
 #text_font_form_1 {
   font-size: 12px;
