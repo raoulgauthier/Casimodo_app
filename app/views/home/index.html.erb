@@ -1,5 +1,4 @@
 
-
 <div class="container">
 
   <div class="row">
@@ -101,13 +100,44 @@
         <div
           id="map"
           style="width: 100%;
-          height: 600px;"
+          height: 600px;
+          margin-bottom: 15px"
           data-markers="<%= @markers.to_json %>"
         ></div>
     </div>
-      <!-- data-markers="<%= @provider_geo.to_json %>" -->
   </div>
 
+  <div class="row">
+     <div class="card card-tile-hero card-body col-sm text-center" >
+
+      <%= form_tag(root_path, method: :get, class: "form") do %>
+
+      <div class="input-group">
+      <%= collection_select(:technician, :id, User.where(user_type: 'technician').order(:email), :id, :email, {prompt: 'Select a technician'}, {class: "form-control"}) %>
+      </div>
+      <br>
+      <div class="input-group">
+        <%= select_tag :status, options_for_select(Workorder::STATUS), prompt: "select a status", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="d-flex">
+        <div class="ml-auto">
+          <%= submit_tag 'Apply the filter', class: "btn btn-primary special_button" %>
+          <% end %>
+          <%= link_to "Cancel", root_path, class: 'btn btn-outline-default' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 </div>
+
+
+
+
+
 
 
