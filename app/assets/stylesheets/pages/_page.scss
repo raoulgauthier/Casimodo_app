@@ -91,6 +91,7 @@ small-13 {
 
 .signature-pad {
   background-color: white;
+  width: 100%;
 }
 
 
@@ -107,3 +108,10 @@ small-13 {
   background-color: #ffc107;
 }
 
+.marginaround {
+  margin: 15px;
+}
+
+#signature_signer {
+   height: 3em;
+}
