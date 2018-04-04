@@ -66,7 +66,7 @@ def signature_process
   # @workorder.signature = Base64.decode64(data_url['data:image/png;base64,'.length .. -1])
   # @workorder.update_attributes(signature: data_url)
   unless data_url.blank?
-    @workorder.update_attributes(signature: data_url)
+    @workorder.update_attributes(signature: data_url, signer:  params[:signature]["signer"])
     redirect_to interventions_path
   end
 end
