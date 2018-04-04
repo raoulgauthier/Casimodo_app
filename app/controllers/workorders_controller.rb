@@ -6,8 +6,13 @@ class WorkordersController < ApplicationController
   # GET /workorders
   def index
     status_due_date
+    list_of_the_day = !params[:list_of_the_day].nil? ? params[:list_of_the_day] == "true" : false
     if params[:technician].nil? && params[:manager].nil? & params[:status].nil? & params[:date_planned].nil?
-      @workorders = Workorder.all
+      if list_of_the_day
+        @workorders = Workorder.where(date_planned: DateTime.now.all_day)
+      else
+        @workorders = Workorder.all
+      end
     else
       query = {}
       @tech = params[:technician][:id].blank? ? "" : query[:technician] = User.find(params[:technician][:id])
@@ -70,7 +75,7 @@ class WorkordersController < ApplicationController
     def status_due_date
       @due_date_selector = ["Do not filter on due date", "Filter on due date"]
     end
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_workorder
       @workorder = Workorder.find(params[:id])
     end

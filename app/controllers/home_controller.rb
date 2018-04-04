@@ -22,12 +22,9 @@ class HomeController < ApplicationController
         <div class='card-body'>
           <div class='media'>
             <div class='media-body text-left'>
-
               <h4 class='m-0 counter' data-from='0' data-to='100' data-speed='5000'
               data-refresh-interval='80'>" + workorder.status + "</h4>
-
               <h6 class='m-0'>" + workorder.description + "</h6>
-
               <p class='m-0 text-muted'>" + workorder.address + "</p>
           </div>
           </div>

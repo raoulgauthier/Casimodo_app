@@ -8,12 +8,16 @@
 <%= fa_icon_tag "plus" %> Add Workorder
 <% end %>&nbsp;
 <%= link_to filter_workorders_path, class: 'btn btn-primary btn-large' do %>
-<%= fa_icon_tag "filter" %> Filter the list
+<%= fa_icon_tag "filter" %> Filter
 <% end %>&nbsp;
-<%= link_to workorders_path, class: 'btn btn-primary btn-large' do %>
+<%= link_to workorders_path(list_of_the_day: true), class: 'btn btn-primary btn-large' do %>
+<%= fa_icon_tag "calendar" %> Due Today
+<% end %>&nbsp;
+<%= link_to workorders_path(list_of_the_day: false), class: 'btn btn-primary btn-large' do %>
 <%= fa_icon_tag "th-list" %> All the list
 <% end %>&nbsp;
 <% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-12">
