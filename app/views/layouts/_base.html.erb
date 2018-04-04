@@ -8,7 +8,8 @@
     <%# Turbolinks... sigh. If you're going to remove this line, please make sure you know what
       you're doing. Please read very carefully: https://github.com/turbolinks/turbolinks %>
     <meta name="turbolinks-cache-control" content="no-cache">
- <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
     <title> Yuman - Stay Connected With the Field </title>
 
     <%= csrf_meta_tags %>
