@@ -103,6 +103,9 @@
           height: 600px;
           margin-bottom: 15px"
           data-markers="<%= @markers.to_json %>"
+          <% if  !params[:technician].nil?  %>
+          data-technician="true"
+          <% end %>
         ></div>
     </div>
   </div>
