@@ -1,5 +1,6 @@
+<div class="marginaround">
 <head> <%= favicon_link_tag "Yumanlogo.png" %> </head>
- <h4>Please let the manager sign if the job is done!</h4>
+ <h4>Sign here</h4>
 
 
  <%= simple_form_for(@workorder, as: :signature, method: :post, url: signature_process_intervention_path(@workorder)) do |f| %>
@@ -7,6 +8,8 @@
                 <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
 
  <%= f.input :signature, as: :hidden %>
+ <%= f.input :signer, as: :text, label: false, placeholder: "Signer's name", input_html: { class: "textareamargin" } %>
+
  <div class="container">
    <div class="row justify-content-around">
       <button  class="btn col-4" id="clear">Clear</button>
@@ -80,3 +83,4 @@ document.getElementById('clear').addEventListener('click', function () {
 
 
 </script>
+</div>
