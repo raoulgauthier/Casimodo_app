@@ -13,12 +13,12 @@
 }
 
 
- #form_new_user {
+#form_new_user {
   padding-top: 30px;
   font-size: 12px;
- }
+}
 
- .card-item-bottom-spacing {
+.card-item-bottom-spacing {
   margin-bottom: 12px;
 }
 .chronology-bottom-spacing {
@@ -69,7 +69,7 @@ small-13 {
 
 .select2-selection__rendered {
   color: green !important;
-  }
+}
 
 
 
@@ -77,7 +77,7 @@ small-13 {
   background-color: rgba(230, 230, 230, 0.6);
   text-align: center;
   color: white;
-  }
+}
 
 #photo_legend {
   height: 3em;
@@ -113,5 +113,32 @@ small-13 {
 }
 
 #signature_signer {
-   height: 3em;
+ height: 3em;
+}
+
+.legendblock {
+  display: flex;
+  justify-content: center;
+}
+
+.legendbox {
+  height: 100%;
+  width: 105px;
+}
+
+.btn-uploadfile {
+  height: 50px;
+  width: 100px;
+  margin: 5px;
+}
+
+
+
+#cambutton {
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+  margin: 5px;
+  background-image: url("camera.svg");
+  background-color: none;
 }

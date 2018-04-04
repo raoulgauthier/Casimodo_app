@@ -79,20 +79,31 @@
               </div>
 
               <% end %>
-                  <%= cl_image_tag(@workorder.signature) %>
-                  <%= @workorder.signer %>
+              <div class="card-item-bottom-spacing">
+                <%= cl_image_tag(@workorder.signature) %>
+                <%= @workorder.signer %>
+              </div>
+
               <% if @workorder.status == "In progress" %>
               <%= simple_form_for(@new_photo, as: :photo, method: :post, url: new_photo_intervention_path(@workorder)) do |f| %>
               <!-- <div class="btn btn-primary photo-button"> -->
-                <%= f.input :photo, label: false %>
-                <p>Legend</p>
-                <%= f.input :legend, as: :text, label: false, placeholder: "Add a legend for your pic", input_html: { class: "textareamargin" } %>
+
+
+                  <span id="showphotolink"></span>
+                <div class="legendblock">
+                  <span>
+                    <%= f.input :photo, label: false, required: false, input_html: { style: "opacity: 0; overflow: hidden;"}, wrapper_html: {id: "cambutton"} %>
+                  </span>
+
+                  <%= f.input :legend, as: :text, label: false, placeholder: "Legend", input_html: { class: "textareamargin legendbox" } %>
+                  <%= f.submit "Upload", class: "btn btn-uploadfile"%>
+                </div>
                 <!-- , input_html: { style: 'display: none;'} -->
                 <!-- </div> -->
                 <%= f.input :photo_cache, as: :hidden %>
 
 
-                <%= f.submit "Upload", class: "btn btn-primary btn-block"%>
+
                 <% end %>
 
                 <%= form_tag(stop_intervention_path(@workorder)) do %>
@@ -134,3 +145,10 @@
     </div>
   </div>
 
+  <script>
+
+    document.getElementById('photo_photo').addEventListener('change', function(){
+     document.getElementById('showphotolink').innerText = document.getElementById('photo_photo').value;
+
+   });
+ </script>
