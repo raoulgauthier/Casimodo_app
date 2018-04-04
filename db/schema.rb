@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20180404081726) do
     t.datetime "date_done"
     t.text "report"
     t.string "status"
-    t.bigint "manager_id"
-    t.bigint "technician_id"
+    t.integer "manager_id"
+    t.integer "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "date_started"
@@ -85,6 +85,4 @@ ActiveRecord::Schema.define(version: 20180404081726) do
   end
 
   add_foreign_key "photos", "workorders"
-  add_foreign_key "workorders", "users", column: "manager_id"
-  add_foreign_key "workorders", "users", column: "technician_id"
 end
