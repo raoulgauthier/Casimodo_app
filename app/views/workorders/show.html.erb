@@ -98,8 +98,12 @@
                 <p><%= p.legend %></p>
               </div>
               <% end %>
+              
+              <div class="row">
               <%= cl_image_tag(@workorder.signature) %>
+              <div class="w-100"></div>
               <%= @workorder.signer %>
+              </div>
               </div>
 
           <div class="d-flex">
