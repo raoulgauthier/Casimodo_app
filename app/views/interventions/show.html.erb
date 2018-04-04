@@ -80,7 +80,7 @@
 
               <% end %>
                   <%= cl_image_tag(@workorder.signature) %>
-
+                  <%= @workorder.signer %>
               <% if @workorder.status == "In progress" %>
               <%= simple_form_for(@new_photo, as: :photo, method: :post, url: new_photo_intervention_path(@workorder)) do |f| %>
               <!-- <div class="btn btn-primary photo-button"> -->
