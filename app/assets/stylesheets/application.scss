@@ -28,3 +28,8 @@ text-decoration: none;
 
 @import "fullcalendar.min";
 @import "scheduler.min";
+
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0px;
+  padding-bottom: 30px;
+}
