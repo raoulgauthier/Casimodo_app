@@ -41,7 +41,9 @@ class WorkordersController < ApplicationController
   end
 
   def create
-    @workorder = Workorder.new(workorder_params)
+    workorder_attributes = workorder_params
+    workorder_attributes[:predicted_duration] = DateTime.parse(workorder_attributes[:predicted_duration]).hour * 60.0 +  DateTime.parse(workorder_attributes[:predicted_duration]).minute
+    @workorder = Workorder.new(workorder_attributes)
 
     if @workorder.save
       UserMailer.workorder_alert(@workorder).deliver_now
@@ -82,6 +84,6 @@ class WorkordersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def workorder_params
-      params.require(:workorder).permit(:address, :description, :date_planned, :date_done, :report, :status, :manager_id, :technician_id)
+      params.require(:workorder).permit(:address, :description, :date_planned, :date_done, :report, :status, :manager_id, :technician_id, :predicted_duration)
     end
 end
