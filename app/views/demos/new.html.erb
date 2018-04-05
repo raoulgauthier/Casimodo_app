@@ -21,12 +21,12 @@
   </head>
   <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
     <div class="card">
-      <div class="card-body img-fluid"  id="padding_zero">
+      <div class="card-body img-fluid"  id="home">
         <header class="landing-header-1" style="background-image: linear-gradient(-225deg, rgba(0,101,110,0.4) 0%, rgba(0,36,61,0.4) 50%), url(https://images.unsplash.com/photo-1485848018738-1705045b4a57?ixlib=rb-0.3.5&s=d0faf6ff0770cc0bf8858ee65a213467&auto=format&fit=crop&w=3449&q=80)">
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3">
+                <nav class="navbar navbar-landing  navbar-centered navbar-expand-lg my-3 navbar-landing-margin">
                   <a href="javascript:" class="navbar-brand d-lg-none">
                     <p>Yuman</p>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -37,16 +37,18 @@
                   <div class="collapse navbar-collapse text-white" id="standardLandingNavbarWithCenteredBrand">
                     <ul class="nav navbar-nav navbar-left">
                       <li class="nav-item ">
-                        <a class="nav-link text-white" href="javascript:">HOME</a>
+                        <a class="nav-link text-white" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">HOME</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link text-white" href="javascript:">ABOUT</a>
+                        <a class="nav-link text-white" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">FEATURES</a>
+
+                      </li>
+
+                      <li class="nav-item ">
+                        <a class="nav-link text-white" onclick="document.getElementById('Benefits').scrollIntoView({behavior: 'smooth'})">BENEFITS</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link text-white" href="javascript:">TEAM</a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link text-white" href="javascript:">CONTACT</a>
+                        <a class="nav-link text-white" onclick="document.getElementById('prices').scrollIntoView({behavior: 'smooth'})">PRICES</a>
                       </li>
                     </ul>
                     <p class="navbar-brand navbar-center text-center d-none d-sm-none d-md-none d-lg-block font-weight-bold">Yuman</p>
@@ -63,26 +65,26 @@
                 </div>
               </div>
             </div>
-            <div class="container header-caption">
+            <div class="container header-caption ">
               <div class="row">
                 <div class="col-12 col-md-10 px-5">
-                  <div class="text-white">
-                    <h1 class="mt-5 font-weight-bold ">INCREASE YOUR PRODUCTIVITY AND QUALITY OF SERVICE</h1>
-                    <h4 class="">Choose a user-friendly CMMS for Facility and Asset Management</h4>
+                  <div class="text-white" >
+                    <h1 class="mt-5 font-weight-bold " id="demo_title">INCREASE YOUR PRODUCTIVITY AND QUALITY OF SERVICE</h1>
+                    <h4 id="demo_subtitle">Choose a user-friendly CMMS for Facility and Asset Management</h4>
                     <br><br>
                   </div>
                   <a class="btn btn-primary text-white" data-toggle="modal" data-target="#Demo">Request a demo</a>
-                  <a class="btn btn-outline-secondary text-white">LEARN MORE</a>
+                  <a class="btn btn-outline-secondary text-white" >LEARN MORE</a>
                 </div>
               </div>
             </div>
           </header>
         </div>
       </div>
-      <div class=" ">
-        <div class="container">
-          <h2 class="text-center header-separator mt-4">Stay Connected With the Field</h2>
-          <p class="text-center lead text-uppercase mb-5">Yuman! The #1 rated software to run your Field Service Management business</p>
+      <div class=" " id="features">
+        <div class="container" >
+          <h2 class="text-center header-separator mt-4 title_div_demo">Stay Connected With the Field</h2>
+          <p class="text-center lead text-uppercase mb-5" id="title_div_demo" >Yuman! The #1 rated software to run your Field Service Management business</p>
           <div
           class="row">
           <div class="col-12 col-md-4">
@@ -147,10 +149,10 @@
 
 <br><br>
 
-<section class="bg-dark p-5">
-  <div class="container">
+<section class="bg-dark p-5 tohide" >
+  <div class="container" >
     <div class="row">
-      <div class="col-12 text-white text-center">
+      <div class="col-12 text-white text-center" >
         <h1>Advantages and Benefits</h1>
       </div>
     </div>
@@ -158,9 +160,9 @@
 
 </section>
 
-<div class="container py-5">
+<div class="container py-5 tohide">
   <div class="row mb-5">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6"  id="Benefits">
       <h6>Reduce paperwork</h6>
       <p>Technicians spend a lot of time dealing with paperwork— writing up reports, finding missing work requests, and searching for old records, service warranties, and schematics. Over time, these activities can seriously chip away at the time they actually spend working.</p>
       <p>Yuman keeps all this information in a single, searchable database, which makes finding it much easier. By decreasing the time your team spends on paperwork, you increase the time spent maintaining assets.</p>
@@ -196,10 +198,10 @@
 
 
 </div>
-<section class="bg-dark">
+<section class="bg-dark" >
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12" >
           <%= render partial: "content_blocks/general/33" %>
       </div>
     </div>
@@ -208,14 +210,14 @@
 
   <% @title = "Yuman" %>
   <%= content_for :js_libs, "modernizr" %>
-  <div class="container">
+  <div class="container" id="prices">
     <div class="row">
       <div class="col-12">
           <%= render partial: "content_blocks/general/38" %>
       </div>
     </div>
   </div>
-  <section class="mt-5 mb-5">
+  <section class="mt-5 mb-5 tohide">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -225,7 +227,7 @@
       </div>
     </div>
   </section>
-  <section class="bg-dark">
+  <section class="bg-dark tohide">
     <div class="container">
       <div class="row">
         <div class="col-12">
