@@ -23,10 +23,10 @@
 
     <%= render 'layouts/external_js_libs' %>
     <%= yield :external_js_libs %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
 
     <%= yield :javascript %>
     <%= yield :head %>
+<link rel='stylesheet' href='fullcalendar.css' />
 
   <title><%= meta_title %></title>
   <meta name="description" content="<%= meta_description %>">
@@ -46,7 +46,7 @@
   <meta name="twitter:description" content="<%= meta_description %>">
   <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
   <meta name="twitter:image:src" content="<%= meta_image %>">
-
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
   </head>
   <body class='<%= @body_class %>' data-js-libs='bootstrap fitie metis forms sidenav prism clipboard bs-switch <%= yield :js_libs %>'>
     <%= yield %>
@@ -55,7 +55,6 @@
 
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
-
   </body>
 <% end %>
 

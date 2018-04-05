@@ -9,8 +9,6 @@ end
 gem "letter_opener", group: :development
 
 gem "carrierwave-base64"
-gem 'signature-pad-rails'
-
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'figaro'

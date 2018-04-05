@@ -18,6 +18,6 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require turbolinks
-//= require signature-pad
 //= require rrt
 //= require_tree .
+

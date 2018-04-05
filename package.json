@@ -2,9 +2,11 @@
   "name": "yuman",
   "private": true,
   "dependencies": {
-    "signature_pad": "^2.3.2",
     "@rails/webpacker": "^3.4.1",
-    "gmaps": "^0.4.24"
+    "fullcalendar": "^3.9.0",
+    "fullcalendar-scheduler": "^1.9.4",
+    "gmaps": "^0.4.24",
+    "moment": "^2.22.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.1"
