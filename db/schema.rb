@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404081726) do
+ActiveRecord::Schema.define(version: 20180405130148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20180404081726) do
     t.float "longitude"
     t.string "signature"
     t.string "signer"
+    t.float "predicted_duration"
     t.index ["manager_id"], name: "index_workorders_on_manager_id"
     t.index ["technician_id"], name: "index_workorders_on_technician_id"
   end

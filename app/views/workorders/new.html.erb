@@ -39,6 +39,14 @@
                   </div>
                 <% end %>
 
+                <%= f.form_group :predicted_duration, class: 'row' do |f| %>
+                  <%= f.label :predicted_duration, class: 'control-label col-md-2' %>
+
+                  <div class='col-12 col-md-10'>
+                   <%= f.select :predicted_duration, Workorder::DURATIONS, {prompt: @workorder.predicted_duration}, {class: "form-control"} %>
+                    <%= f.error_messages %></div>
+                <% end %>
+
                 <%= f.form_group :date_planned, class: 'row' do |f| %>
                   <%= f.label :due_date, class: 'control-label col-md-2' %>
                   <div class='col-12 col-md-10'>

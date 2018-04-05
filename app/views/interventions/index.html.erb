@@ -1,48 +1,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-9">
-      <h4><%="My workorders"%></h4>
-    </div>
-
-    <div class="col-3 align-text-bottom align-middle out">
-      <%= link_to destroy_user_session_path, class:"out ", method: :delete do %>
-      <%= t(".sign_out", default: "Log out") %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
     <div class="col-md-9">
-         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-            <li class="dropdown-item text-center">
-              <div class="card">
-                <div class="card-body">
-
-                   <span style="font-size: 48px;">
-                    <i class="fa fa-user avatar img-rounded"></i>
-                    </span>
-
-                  <p class="m0 p0 d-block"> <%=current_user.email %></p>
-                  <p class="small m0 p0">Premium Account</p>
-                </div>
-
-                <div class="card-footer d-flex justify-content-between">
-                  <div>
-                    <a href="003_app_pages@fa-laptop%2F006_user_profile" class="btn ">Edit Profile</a>
-                  </div>
-                  <div>
-                    <a href="/users/sign_out" class="btn ">Log Out</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-        </ul>
+      <h4><%="My workorders"%></h1>
       </div>
     </div>
   </div>
+
+
 
 
   <div class="container">
