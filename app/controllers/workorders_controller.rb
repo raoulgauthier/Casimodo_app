@@ -26,6 +26,20 @@ class WorkordersController < ApplicationController
     end
   end
 
+  def tech_list
+    @users = User.where(user_type: "technician").map { |u| { id: u.id, title: u.name } }
+    render json: @users
+  end
+
+  def event_list
+    @workorders = Workorder.all.map do |e|
+      date_end = e.date_planned + 1.hour
+      { url: workorder_path(e), className: "workorder-event",  color: e.color, title: e.description, start: e.date_planned.to_datetime.to_s, end: date_end.to_datetime.to_s, resourceId: e.technician.id, }
+    end
+
+    render json: @workorders
+  end
+
   def show
   end
 

@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   resources :workorders do
     collection do
       get 'filter'
+      get 'tech_list'
+      get 'event_list'
     end
   end
 

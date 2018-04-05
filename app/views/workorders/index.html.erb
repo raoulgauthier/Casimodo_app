@@ -19,6 +19,8 @@
 <% end %>
 
 <div class="container">
+<div id='calendar'></div>
+<br>
   <div class="row">
     <div class="col-12 col-md-12">
       <div class="card sheet-condensed">
@@ -36,26 +38,26 @@
             <% @workorders.each do |workorder| %>
             <tr>
               <td>
-          <!-- render 'icon_status', workorder: workorder -->
-              <% if workorder.status == "Open"%>
-              <span class="badge badge-danger btn-block text-white">
-                <%= workorder.status %> <% end %>
-              </span>
+                <!-- render 'icon_status', workorder: workorder -->
+                <% if workorder.status == "Open"%>
+                <span class="badge badge-danger btn-block text-white">
+                  <%= workorder.status %> <% end %>
+                </span>
 
-              <% if workorder.status == "Scheduled"%>
-              <span class="badge badge-warning btn-block text-white">
-                <%= workorder.status %> <% end %>
-              </span>
+                <% if workorder.status == "Scheduled"%>
+                <span class="badge badge-warning btn-block text-white">
+                  <%= workorder.status %> <% end %>
+                </span>
 
-              <% if workorder.status == "In progress"%>
-              <span class="badge badge-primary btn-block text-white">
-                <%= workorder.status %> <% end %>
-              </span>
+                <% if workorder.status == "In progress"%>
+                <span class="badge badge-primary btn-block text-white">
+                  <%= workorder.status %> <% end %>
+                </span>
 
-              <% if workorder.status == "Closed"%>
-              <span class="badge badge-success btn-block text-white">
-                <%= workorder.status %> <% end %>
-              </span>
+                <% if workorder.status == "Closed"%>
+                <span class="badge badge-success btn-block text-white">
+                  <%= workorder.status %> <% end %>
+                </span>
               </td>
               <td><%= workorder.address %> <br> <%= workorder.description %></td>
   <!-- time_ago_in_words(workorder.date_planned)
@@ -63,55 +65,58 @@
       t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 11/19/2007"
       t.strftime("at %I:%M%p")            #=> "at 08:37AM"
       class="badge badge-warning" or in the tag css:   color: #ffc107
-  -->
-            <td><small-13 >
-              <div class="chronology-bottom-spacing">
-                  <span style="font-size: 12px;"><i class="fa fa-unlock justify-content-center"></i></span>
-                <%= workorder.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
-              </div>
-              <% if workorder.date_planned %>
-                <div class="chronology-bottom-spacing">
-                  <span style="font-size: 12px;"><i class="fa fa-calendar justify-content-center"></i></span>
-                <%= workorder.date_planned.strftime("%m/%d/%Y at %I:%M%p") %>
-                </div>
-              <% end %>
-              <% if workorder.date_started %>
-                <div class="chronology-bottom-spacing">
-                <span style="font-size: 12px;"><i class="fa fa-refresh justify-content-center"></i></span>
-                <%= workorder.date_started.strftime("%m/%d/%Y at %I:%M%p") %>
-                </div>
-              <% end %>
-              <% if workorder.date_done %>
-                <div class="chronology-bottom-spacing">
-                <span style="font-size: 12px;"><i class="fa fa-lock justify-content-center"></i></span>
-                <%= workorder.date_done.strftime("%m/%d/%Y at %I:%M%p") %>
-                </div>
-              <% end %>
-
-            </small-13></td>
-
-              <td><%= workorder.manager.name %><br>
-              <% if !workorder.technician.nil? %>
-                <strong><%= workorder.technician.name %></strong></td>
-              <% end %>
-
-              <td class="actions text-right">
-                <div class="btn-group">
-                  <%= link_to theme_icon_tag("eye"), workorder, 'data-toggle': 'tooltip', title: 'Show', class: "btn btn-link" %>
-                  <%= link_to theme_icon_tag("pencil-alt"), edit_workorder_path(workorder), 'data-toggle': 'tooltip', title: 'Edit', class: "btn btn-link" %>
-                  <%= link_to theme_icon_tag("trash"), workorder, 'data-toggle': 'tooltip', title: 'Delete',
-                  data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-link' %>
-                </div>
-              </td>
-            </tr>
-            <% end %>
-            <% if @workorders.length == 0 %>
-            <tr><td colspan=42 class='text-center'>No workorders.</td></tr>
-            <% end %>
-          </tbody>
-        </table>
+    -->
+    <td><small-13 >
+      <div class="chronology-bottom-spacing">
+        <span style="font-size: 12px;"><i class="fa fa-unlock justify-content-center"></i></span>
+        <%= workorder.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
       </div>
+      <% if workorder.date_planned %>
+      <div class="chronology-bottom-spacing">
+        <span style="font-size: 12px;"><i class="fa fa-calendar justify-content-center"></i></span>
+        <%= workorder.date_planned.strftime("%m/%d/%Y at %I:%M%p") %>
+      </div>
+      <% end %>
+      <% if workorder.date_started %>
+      <div class="chronology-bottom-spacing">
+        <span style="font-size: 12px;"><i class="fa fa-refresh justify-content-center"></i></span>
+        <%= workorder.date_started.strftime("%m/%d/%Y at %I:%M%p") %>
+      </div>
+      <% end %>
+      <% if workorder.date_done %>
+      <div class="chronology-bottom-spacing">
+        <span style="font-size: 12px;"><i class="fa fa-lock justify-content-center"></i></span>
+        <%= workorder.date_done.strftime("%m/%d/%Y at %I:%M%p") %>
+      </div>
+      <% end %>
 
-    </div>
-  </div>
+    </small-13></td>
+
+    <td><%= workorder.manager.name %><br>
+      <% if !workorder.technician.nil? %>
+      <strong><%= workorder.technician.name %></strong></td>
+      <% end %>
+
+      <td class="actions text-right">
+        <div class="btn-group">
+          <%= link_to theme_icon_tag("eye"), workorder, 'data-toggle': 'tooltip', title: 'Show', class: "btn btn-link" %>
+          <%= link_to theme_icon_tag("pencil-alt"), edit_workorder_path(workorder), 'data-toggle': 'tooltip', title: 'Edit', class: "btn btn-link" %>
+          <%= link_to theme_icon_tag("trash"), workorder, 'data-toggle': 'tooltip', title: 'Delete',
+          data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-link' %>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+    <% if @workorders.length == 0 %>
+    <tr><td colspan=42 class='text-center'>No workorders.</td></tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
+
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+</script>

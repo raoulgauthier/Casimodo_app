@@ -25,9 +25,9 @@ users = User.create!([
 ])
 workorders = Workorder.create!([
 
-{ manager: users[0], technician: users[1], address: '37 Bd du Roi Albert II, Schaerbeek, Belgium', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,30,10,15', status:'Open' },
-{ manager: users[0], technician: users[1], address: 'Quai des Péniches 69, 1000 Bruxelles, Belgium', description: 'chauffage en panne', date_planned: '2018,3,30,10,15', status:'Open' },
-{ manager: users[0], technician: users[1], address: 'Place Charles Rogier 3, 1210 Saint-Josse-ten-Noode, Belgium', description: 'climatisation 3ème étage impossible à règler', date_planned: '2018,3,30,10,15', status:'Open' },
+{ manager: users[0], technician: users[1], address: '37 Bd du Roi Albert II, Schaerbeek, Belgium', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,4,5,10,15', status:'Open' },
+{ manager: users[0], technician: users[1], address: 'Quai des Péniches 69, 1000 Bruxelles, Belgium', description: 'chauffage en panne', date_planned: '2018,4,5,10,15', status:'Open' },
+{ manager: users[0], technician: users[1], address: 'Place Charles Rogier 3, 1210 Saint-Josse-ten-Noode, Belgium', description: 'climatisation 3ème étage impossible à règler', date_planned: '2018,4,5,10,15', status:'Open' },
 { manager: users[0], technician: users[1], address: '1210 Saint-Josse-ten-Noode, Belgium', description: 'ascenceur de droite bloqué au RDC', date_planned: '2018,3,30,10,15', status:'Open' },
 { manager: users[6], technician: users[7], address: '1030 Schaerbeek, Belgium', description: 'ascenceur de gauche bloqué au RDC', date_planned: '2018,3,30,10,15', status:'Scheduled' },
 { manager: users[6], technician: users[7], address: 'Avenue Louise 480, 1050 Bruxelles, Belgium', description: 'ascenceur du milieu bloqué au RDC', date_planned: '2018,2,30,10,15', status:'Closed' },
