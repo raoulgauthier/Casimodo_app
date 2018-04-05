@@ -152,7 +152,7 @@ padding-top: 10px;
 
 
 
-@media screen and (max-device-width : 600px)
+@media screen and (max-device-width : 800px)
 {
   #demo_title
   {
@@ -160,7 +160,7 @@ padding-top: 10px;
   }
 }
 
-@media screen and (max-device-width : 600px)
+@media screen and (max-device-width : 800px)
 {
   .navbar
   {
@@ -169,7 +169,7 @@ padding-top: 10px;
   }
 }
 
-@media screen and (max-device-width : 600px)
+@media screen and (max-device-width : 800px)
 {
   .my-3
   {
@@ -177,7 +177,7 @@ padding-top: 10px;
   }
 }
 
-@media screen and (max-device-width : 600px)
+@media screen and (max-device-width : 800px)
 {
   #demo_subtitle
   {
@@ -186,7 +186,7 @@ padding-top: 10px;
   }
 }
 
-@media screen and (max-device-width : 600px)
+@media screen and (max-device-width : 800px)
 {
 .mt-5
  {
@@ -201,3 +201,24 @@ padding-top: 10px;
 }
 
 
+@media screen and (max-device-width : 800px)
+{
+.title_div_demo .mt-4
+ {
+   font-size: 2.1em;
+   margin-top: 0px;
+
+  }
+}
+
+@media all and (max-width: 1300px) {
+
+  .tohide{display:block;}
+  .toprint{display:none;}
+}
+
+@media all and (max-width: 800px) {
+
+  .tohide{display:none;}
+  .toprint{display:block;}
+}
