@@ -43,7 +43,6 @@ gem 'simple_form'
 
 gem 'devise','~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
-gem 'webpacker', '~> 3.4'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true

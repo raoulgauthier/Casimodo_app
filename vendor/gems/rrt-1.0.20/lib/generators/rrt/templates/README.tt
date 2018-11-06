@@ -1,0 +1,60 @@
+===============================================================================
+
+                            You just installed...
+
+                            ______ ______  _____
+                            | ___ \| ___ \|_   _|
+                            | |_/ /| |_/ /  | |
+                            |    / |    /   | |
+                            | |\ \ | |\ \   | |
+                            \_| \_|\_| \_|  \_/
+
+
+                             Rapid Rails Themes
+
+
+Thanks for supporting our mom & pop software company running from the middle
+of nowhere! We really appreciate it.
+
+Some setup you must do manually if you haven't yet:
+
+  * Choose a theme style in app/assets/stylesheets/rrt.css
+
+  * Ensure app/assets/stylesheets/rrt.css is loaded in application.css
+    with `require rrt`.
+
+  * Ensure `require rrt` has been added to
+    app/assets/javascripts/application.js.
+
+  * Ensure you have defined root_url to *something* in your config/routes.rb.
+    For example:
+
+      root :to => "home#index"
+
+  * If you are using simple_form, don't forget to run:
+
+      rails generate simple_form:install --bootstrap
+
+  * Browse the theme documentation:
+
+      Rails Integration: https://rapidrailsthemes.com/docs
+
+  * Lastly, restart your server if it's already running. And maybe also
+    do `spring stop` if anything weird happens.
+
+<% if can_customize? %>
+If you want to fully customize your theme (edit SCSS variables and be picky
+about what is being put in your CSS), run `rails generate rrt:customize`.
+<% end %>
+
+We really appreciate your business here at Rapid Rails Themes,
+thanks for buying!
+
+*** Having problems? ***
+
+Log into your rapidrailsthemes.com account, go to the Support page and tell
+us everything.
+
+And we'll do our very best to help you!
+
+===============================================================================
